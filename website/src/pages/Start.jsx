@@ -2,6 +2,6 @@ import React from 'react'
 
 export default function Start() {
   return (
-    <div>Start</div>
+    <h1>Start Page</h1>
   )
 }
