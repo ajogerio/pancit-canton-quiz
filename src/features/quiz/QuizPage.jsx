@@ -5,7 +5,7 @@ import Choices from './components/Choices';
 
 export default function QuizPage() {
   return (
-    <main className="flex flex-col">
+    <main className="flex flex-col items-center min-h-screen mx-[130px]">
       <ProgressBar />
       <Question />
       <Choices />
