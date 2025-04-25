@@ -75,6 +75,9 @@ export default function Choices() {
                   console.log(`New Question Number: ${prev}\n`);
                   return updatedQuestionNumber;
                 });
+
+                // reset the selection state
+                setSelectedChoice(null);
               }}
             >
               Next Question
