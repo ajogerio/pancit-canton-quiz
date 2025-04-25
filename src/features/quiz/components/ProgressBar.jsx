@@ -7,3 +7,4 @@ export default function ProgressBar({ progress = 50 }) {
     </div>
   );
 }
+
