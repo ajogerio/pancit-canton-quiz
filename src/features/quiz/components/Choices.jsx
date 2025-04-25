@@ -23,7 +23,7 @@ export default function Choices() {
   // the current question number
   const [questionNumber, setQuestionNumber] = useState(1);
 
-  // checks if the user has selected a choice
+  // stores the selected choice of the user
   const [selectedChoice, setSelectedChoice] = useState(null);
 
   // current choices to be displayed
@@ -32,9 +32,12 @@ export default function Choices() {
   // select the choices to be rendered depending on the question number
   useEffect(() => {
     setChoicesToDisplay(choicesPerQuestion[questionNumber]);
+    console.log(choicesPerQuestion[questionNumber]);
   }, [questionNumber]);
 
-  console.log("Quiz Form:", quizForm);
+  useEffect(() => {
+    console.log(quizForm);
+  }, [quizForm]);
 
   return (
     <div>
@@ -48,11 +51,13 @@ export default function Choices() {
               selectedChoice={selectedChoice}
               onChoiceClick={(selectedLetter) => {
                 setQuizForm(
-                  (prev) => ({
-                    ...prev,
-                    [questionNumber]: selectedLetter,
-                  }),
-                  setSelectedChoice(selectedLetter)
+                  (prev) => (
+                    {
+                      ...prev,
+                      [questionNumber]: selectedLetter,
+                    },
+                    setSelectedChoice(selectedLetter)
+                  )
                 );
               }}
             />
@@ -64,7 +69,7 @@ export default function Choices() {
         {selectedChoice && // if a user has selected a choice
           questionNumber < questionsTotal - 1 && ( // and the question number is less than the total questions
             <button
-              className="rounded-full bg-gray-400 text-white p-1"
+              className="rounded-full bg-gray-400 text-white p-1 cursor-pointer"
               onClick={() => {
                 setQuestionNumber((prev) => {
                   const updatedQuestionNumber = prev + 1;
