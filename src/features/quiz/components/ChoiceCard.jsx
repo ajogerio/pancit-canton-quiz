@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { choiceLetters } from "../data/choices";
 
 export default function ChoiceCard({
   index,
@@ -7,7 +8,6 @@ export default function ChoiceCard({
   selectedChoice,
   onChoiceClick,
 }) {
-  const choiceLetters = ["A", "B", "C", "D", "E"];
   const currentLetter = choiceLetters[index];
 
   return (

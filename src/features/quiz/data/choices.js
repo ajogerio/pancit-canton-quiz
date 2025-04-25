@@ -10,3 +10,5 @@ export const choicesPerQuestion = {
   9: ["A", "B", "C", "D", "E"],
   10: ["Alpha", "Bravo", "Charlie", "Delta", "Echo"]
 };
+
+export const choiceLetters = ["A", "B", "C", "D", "E"];
