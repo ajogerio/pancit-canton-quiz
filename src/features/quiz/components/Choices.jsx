@@ -50,15 +50,14 @@ export default function Choices() {
               choice={choice}
               selectedChoice={selectedChoice}
               onChoiceClick={(selectedLetter) => {
-                setQuizForm(
-                  (prev) => (
-                    {
-                      ...prev,
-                      [questionNumber]: selectedLetter,
-                    },
-                    setSelectedChoice(selectedLetter)
-                  )
-                );
+                // update the quiz form
+                setQuizForm((prev) => ({
+                  ...prev,
+                  [questionNumber]: selectedLetter,
+                }));
+
+                // update the selected choice
+                setSelectedChoice(selectedLetter);
               }}
             />
           );
