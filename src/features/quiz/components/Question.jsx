@@ -1,10 +1,11 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-export default function Question() {
+export default function Question({ questionNumber, questionsTotal }) {
   return (
     <div>
       <div>
-        <p>Question 1/10</p>
+        <p>Question {questionNumber}/{questionsTotal}</p>
       </div>
       <div>
         <p>
@@ -17,3 +18,8 @@ export default function Question() {
     </div>
   );
 }
+
+Question.propTypes = {
+  questionNumber: PropTypes.number,
+  questionsTotal: PropTypes.number,
+};

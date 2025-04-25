@@ -23,7 +23,7 @@ export default function QuizPage() {
         questionNumber={questionNumber}
         progress={progress}
       />
-      <Question />
+      <Question questionNumber={questionNumber} questionsTotal={questionsTotal}/>
       <Choices
         questionsTotal={questionsTotal}
         questionNumber={questionNumber}
