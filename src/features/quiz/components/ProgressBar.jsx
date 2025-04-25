@@ -1,8 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-export default function ProgressBar({ questionsTotal }) {
-  const progress
+export default function ProgressBar({ progress }) {
   return (
     <div className="h-[20px] min-w-[279px] bg-[#898989] rounded-full">
       <div
@@ -14,5 +13,5 @@ export default function ProgressBar({ questionsTotal }) {
 }
 
 ProgressBar.propTypes = {
-  questionsTotal: PropTypes.number,
+  progress: PropTypes.number,
 };

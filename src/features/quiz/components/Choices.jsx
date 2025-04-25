@@ -7,6 +7,7 @@ export default function Choices({
   questionsTotal,
   questionNumber,
   setQuestionNumber,
+  setProgress,
 }) {
   // this will hold all the data so it persists
   const [quizForm, setQuizForm] = useState({
@@ -65,7 +66,7 @@ export default function Choices({
 
       <div>
         {selectedChoice && // if a user has selected a choice
-          questionNumber < questionsTotal - 1 && ( // and the question number is less than the total questions
+          questionNumber < questionsTotal && ( // and the question number is less than the total questions
             <button
               className="rounded-full bg-gray-400 text-white p-1 cursor-pointer"
               onClick={() => {
@@ -77,6 +78,9 @@ export default function Choices({
 
                 // reset the selection state
                 setSelectedChoice(null);
+
+                // update the progress
+                setProgress(Math.round((questionNumber / questionsTotal) * 100));
               }}
             >
               Next Question
@@ -91,4 +95,6 @@ Choices.propTypes = {
   questionsTotal: PropTypes.number,
   questionNumber: PropTypes.number,
   setQuestionNumber: PropTypes.func,
+  progress: PropTypes.number,
+  setProgress: PropTypes.func,
 };
