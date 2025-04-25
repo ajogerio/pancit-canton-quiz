@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { choicesPerQuestion } from "../data/choices";
+import PropTypes from "prop-types";
 import ChoiceCard from "./ChoiceCard";
 
-export default function Choices() {
-  // total number of questions
-  const questionsTotal = 10;
-
+export default function Choices({
+  questionsTotal,
+  questionNumber,
+  setQuestionNumber,
+}) {
   // this will hold all the data so it persists
   const [quizForm, setQuizForm] = useState({
     1: null,
@@ -19,9 +21,6 @@ export default function Choices() {
     9: null,
     10: null,
   });
-
-  // the current question number
-  const [questionNumber, setQuestionNumber] = useState(1);
 
   // stores the selected choice of the user
   const [selectedChoice, setSelectedChoice] = useState(null);
@@ -87,3 +86,9 @@ export default function Choices() {
     </div>
   );
 }
+
+Choices.propTypes = {
+  questionsTotal: PropTypes.number,
+  questionNumber: PropTypes.number,
+  setQuestionNumber: PropTypes.func,
+};
