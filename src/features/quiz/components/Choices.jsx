@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useReducer } from "react";
-import { choicesPerQuestion } from "../data/choices";
+import { choicesPerQuestion, choiceLetters } from "../data/choices";
 import { choiceInfo } from "../data/choiceInfo";
 import PropTypes from "prop-types";
 import ChoiceCard from "./ChoiceCard";
@@ -102,7 +102,14 @@ export default function Choices({
         {showChoiceInfo && (
           <div>
             <p>
-              You chose <span className="font-semibold">{selectedChoice}</span>
+              You chose{" "}
+              <span className="font-semibold">
+                {
+                  choicesPerQuestion[questionNumber][
+                    choiceLetters.indexOf(selectedChoice)
+                  ]
+                }
+              </span>
             </p>
             <p>{choiceInfo[questionNumber][selectedChoice]}</p>
           </div>
@@ -136,15 +143,26 @@ export default function Choices({
 
         {showChoiceInfo &&
           questionNumber < questionsTotal && ( // and the question number is less than the total questions
-            <button
-              className="rounded-full bg-gray-400 text-white p-1 cursor-pointer"
-              onClick={() => {
-                setQuestionNumber((prev) => prev + 1);
-                setShowChoiceInfo(false);
-              }}
-            >
-              Next Question
-            </button>
+            <div>
+              <button
+                className="rounded-full bg-gray-400 text-white p-1 cursor-pointer"
+                onClick={() => {
+                  setShowChoiceInfo(false);
+                }}
+              >
+                Back
+              </button>
+
+              <button
+                className="rounded-full bg-gray-400 text-white p-1 cursor-pointer"
+                onClick={() => {
+                  setQuestionNumber((prev) => prev + 1);
+                  setShowChoiceInfo(false);
+                }}
+              >
+                Next Question
+              </button>
+            </div>
           )}
       </div>
     </div>
