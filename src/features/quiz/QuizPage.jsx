@@ -10,6 +10,7 @@ export default function QuizPage() {
   // the current question number
   const [questionNumber, setQuestionNumber] = useState(1);
 
+  // track the progress of the user
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {

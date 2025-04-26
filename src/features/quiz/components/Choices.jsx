@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useReducer } from "react";
+import { useNavigate } from "react-router-dom";
 import { choicesPerQuestion, choiceLetters } from "../data/choices";
 import { choiceInfo } from "../data/choiceInfo";
 import PropTypes from "prop-types";
@@ -49,6 +50,9 @@ export default function Choices({
   questionNumber,
   setQuestionNumber,
 }) {
+  // for navigation
+  const navigate = useNavigate();
+  
   // this will hold all the previous choice data so it persists
   const [state, dispatch] = useReducer(quizReducer, initialQuizFormState);
   const { quizForm, selectedChoice } = state;
@@ -81,23 +85,21 @@ export default function Choices({
   return (
     <div>
       <div>
-        {!showChoiceInfo && // show this only when showChoiceInfo is false
-          choicesToDisplay.map((choice, index) => {
-            return (
-              <ChoiceCard
-                key={index}
-                index={index}
-                choice={choice}
-                selectedChoice={selectedChoice}
-                onChoiceClick={(selectedLetter) => {
-                  dispatch({
-                    type: "SELECT_CHOICE",
-                    payload: { questionNumber, selectedLetter },
-                  });
-                }}
-              />
-            );
-          })}
+        {!showChoiceInfo &&
+          choicesToDisplay.map((choice, index) => (
+            <ChoiceCard
+              key={index}
+              index={index}
+              choice={choice}
+              selectedChoice={selectedChoice}
+              onChoiceClick={(selectedLetter) => {
+                dispatch({
+                  type: "SELECT_CHOICE",
+                  payload: { questionNumber, selectedLetter },
+                });
+              }}
+            />
+          ))}
 
         {showChoiceInfo && (
           <div>
@@ -116,7 +118,7 @@ export default function Choices({
         )}
       </div>
 
-      <div className="flex flex-row">
+      <div className="flex flex-row gap-2">
         {questionNumber > 1 && (
           <button
             className="rounded-full bg-gray-400 text-white p-1 cursor-pointer"
@@ -129,30 +131,29 @@ export default function Choices({
           </button>
         )}
 
-        {selectedChoice && // if a user has selected a choice
-          !showChoiceInfo && ( // and the choice information is not yet showing already showing
+        {selectedChoice && !showChoiceInfo && (
+          <button
+            className="rounded-full bg-gray-400 text-white p-1 cursor-pointer"
+            onClick={() => {
+              setShowChoiceInfo(true);
+            }}
+          >
+            Proceed
+          </button>
+        )}
+
+        {showChoiceInfo && (
+          <>
             <button
               className="rounded-full bg-gray-400 text-white p-1 cursor-pointer"
               onClick={() => {
-                setShowChoiceInfo(true);
+                setShowChoiceInfo(false);
               }}
             >
-              Proceed
+              Change my Answer
             </button>
-          )}
 
-        {showChoiceInfo &&
-          questionNumber < questionsTotal && ( // and the question number is less than the total questions
-            <div>
-              <button
-                className="rounded-full bg-gray-400 text-white p-1 cursor-pointer"
-                onClick={() => {
-                  setShowChoiceInfo(false);
-                }}
-              >
-                Back
-              </button>
-
+            {questionNumber < questionsTotal ? (
               <button
                 className="rounded-full bg-gray-400 text-white p-1 cursor-pointer"
                 onClick={() => {
@@ -162,8 +163,18 @@ export default function Choices({
               >
                 Next Question
               </button>
-            </div>
-          )}
+            ) : (
+              <button
+                className="rounded-full bg-green-500 text-white p-1 cursor-pointer"
+                onClick={() => {
+                  navigate("/calculating");
+                }}
+              >
+                Finish Quiz
+              </button>
+            )}
+          </>
+        )}
       </div>
     </div>
   );
@@ -173,5 +184,4 @@ Choices.propTypes = {
   questionsTotal: PropTypes.number,
   questionNumber: PropTypes.number,
   setQuestionNumber: PropTypes.func,
-  progress: PropTypes.number,
 };
