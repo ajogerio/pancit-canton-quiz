@@ -1,16 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useReducer } from "react";
 import { choicesPerQuestion } from "../data/choices";
 import PropTypes from "prop-types";
 import ChoiceCard from "./ChoiceCard";
 
-export default function Choices({
-  questionsTotal,
-  questionNumber,
-  setQuestionNumber,
-  setProgress,
-}) {
-  // this will hold all the data so it persists
-  const [quizForm, setQuizForm] = useState({
+const initialQuizFormState = {
+  quizForm: {
     1: null,
     2: null,
     3: null,
@@ -21,19 +15,60 @@ export default function Choices({
     8: null,
     9: null,
     10: null,
-  });
+  },
+  selectedChoice: null,
+};
 
-  // stores the selected choice of the user
-  const [selectedChoice, setSelectedChoice] = useState(null);
+function quizReducer(state, action) {
+  switch (action.type) {
+    case "SELECT_CHOICE":
+      return {
+        ...state,
+        quizForm: {
+          ...state.quizForm,
+          [action.payload.questionNumber]: action.payload.selectedLetter,
+        },
+
+        selectedChoice: action.payload.selectedLetter,
+      };
+
+    case "LOAD_SELECTED_CHOICE":
+      return {
+        ...state,
+        selectedChoice: action.payload,
+      };
+
+    default:
+      return state;
+  }
+}
+
+export default function Choices({
+  questionsTotal,
+  questionNumber,
+  setQuestionNumber,
+}) {
+  // this will hold all the previous choice data so it persists
+  const [state, dispatch] = useReducer(quizReducer, initialQuizFormState);
+  const { quizForm, selectedChoice } = state;
 
   // current choices to be displayed
   const [choicesToDisplay, setChoicesToDisplay] = useState([]);
 
   // select the choices to be rendered depending on the question number
+  // AND highlight a choice if it was previously selected
   useEffect(() => {
+    // fetch the choices to display
     setChoicesToDisplay(choicesPerQuestion[questionNumber]);
-    console.log(choicesPerQuestion[questionNumber]);
-  }, [questionNumber]);
+    console.log(`New Set of Choices: ${choicesPerQuestion[questionNumber]}`);
+
+    // fetch the saved selection state
+    dispatch({
+      type: "LOAD_SELECTED_CHOICE",
+      payload: quizForm[questionNumber],
+    });
+    console.log(`New Question Number: ${questionNumber}\n`);
+  }, [questionNumber, quizForm]);
 
   useEffect(() => {
     console.log(quizForm);
@@ -50,37 +85,33 @@ export default function Choices({
               choice={choice}
               selectedChoice={selectedChoice}
               onChoiceClick={(selectedLetter) => {
-                // update the quiz form
-                setQuizForm((prev) => ({
-                  ...prev,
-                  [questionNumber]: selectedLetter,
-                }));
-
-                // update the selected choice
-                setSelectedChoice(selectedLetter);
+                dispatch({
+                  type: "SELECT_CHOICE",
+                  payload: { questionNumber, selectedLetter },
+                });
               }}
             />
           );
         })}
       </div>
 
-      <div>
+      <div className="flex flex-row">
+        {questionNumber > 1 && (
+          <button
+            className="rounded-full bg-gray-400 text-white p-1 cursor-pointer"
+            onClick={() => {
+              setQuestionNumber((prev) => prev - 1);
+            }}
+          >
+            Previous Question
+          </button>
+        )}
         {selectedChoice && // if a user has selected a choice
           questionNumber < questionsTotal && ( // and the question number is less than the total questions
             <button
               className="rounded-full bg-gray-400 text-white p-1 cursor-pointer"
               onClick={() => {
-                setQuestionNumber((prev) => {
-                  const updatedQuestionNumber = prev + 1;
-                  console.log(`New Question Number: ${prev}\n`);
-                  return updatedQuestionNumber;
-                });
-
-                // reset the selection state
-                setSelectedChoice(null);
-
-                // update the progress
-                setProgress(Math.round((questionNumber / questionsTotal) * 100));
+                setQuestionNumber((prev) => prev + 1);
               }}
             >
               Next Question
@@ -96,5 +127,4 @@ Choices.propTypes = {
   questionNumber: PropTypes.number,
   setQuestionNumber: PropTypes.func,
   progress: PropTypes.number,
-  setProgress: PropTypes.func,
 };

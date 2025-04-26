@@ -16,6 +16,11 @@ export default function QuizPage() {
     console.log(progress);
   }, [progress]);
 
+  useEffect(() => {
+    // update the progress
+    setProgress(Math.round((questionNumber / questionsTotal) * 100));
+  }, [questionNumber, questionsTotal]);
+
   return (
     <main className="flex flex-col items-center min-h-screen mx-auto py-[18px]">
       <ProgressBar
@@ -23,13 +28,14 @@ export default function QuizPage() {
         questionNumber={questionNumber}
         progress={progress}
       />
-      <Question questionNumber={questionNumber} questionsTotal={questionsTotal}/>
+      <Question
+        questionNumber={questionNumber}
+        questionsTotal={questionsTotal}
+      />
       <Choices
         questionsTotal={questionsTotal}
         questionNumber={questionNumber}
         setQuestionNumber={setQuestionNumber}
-        progress={progress}
-        setProgress={setProgress}
       />
     </main>
   );
