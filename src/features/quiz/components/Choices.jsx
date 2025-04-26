@@ -52,7 +52,7 @@ export default function Choices({
 }) {
   // for navigation
   const navigate = useNavigate();
-  
+
   // this will hold all the previous choice data so it persists
   const [state, dispatch] = useReducer(quizReducer, initialQuizFormState);
   const { quizForm, selectedChoice } = state;
@@ -83,8 +83,8 @@ export default function Choices({
   }, [quizForm]);
 
   return (
-    <div>
-      <div>
+    <div className="flex flex-col items-center gap-4 px-10">
+      <div className="flex flex-col gap-4 min-h-40">
         {!showChoiceInfo &&
           choicesToDisplay.map((choice, index) => (
             <ChoiceCard
@@ -102,7 +102,7 @@ export default function Choices({
           ))}
 
         {showChoiceInfo && (
-          <div>
+          <div className="">
             <p>
               You chose{" "}
               <span className="font-semibold">
@@ -121,47 +121,47 @@ export default function Choices({
       <div className="flex flex-row gap-2">
         {questionNumber > 1 && (
           <button
-            className="rounded-full bg-gray-400 text-white p-1 cursor-pointer"
+            className="rounded-full bg-[#dc3e26] text-white p-1 cursor-pointer w-12 h-12"
             onClick={() => {
               setQuestionNumber((prev) => prev - 1);
               setShowChoiceInfo(false);
             }}
           >
-            Previous Question
+            <i className="fa-solid fa-arrow-left"></i>
           </button>
         )}
 
         {selectedChoice && !showChoiceInfo && (
           <button
-            className="rounded-full bg-gray-400 text-white p-1 cursor-pointer"
+            className="rounded-full bg-[#dc3e26] text-white p-1 cursor-pointer w-12 h-12"
             onClick={() => {
               setShowChoiceInfo(true);
             }}
           >
-            Proceed
+            <i className="fa-solid fa-arrow-right"></i>
           </button>
         )}
 
         {showChoiceInfo && (
           <>
             <button
-              className="rounded-full bg-gray-400 text-white p-1 cursor-pointer"
+              className="rounded-full bg-[#dc3e26] text-white p-1 cursor-pointer"
               onClick={() => {
                 setShowChoiceInfo(false);
               }}
             >
-              Change my Answer
+              Edit Answer
             </button>
 
             {questionNumber < questionsTotal ? (
               <button
-                className="rounded-full bg-gray-400 text-white p-1 cursor-pointer"
+                className="rounded-full bg-[#dc3e26] text-white p-1 cursor-pointer w-12 h-12"
                 onClick={() => {
                   setQuestionNumber((prev) => prev + 1);
                   setShowChoiceInfo(false);
                 }}
               >
-                Next Question
+                <i className="fa-solid fa-arrow-right"></i>
               </button>
             ) : (
               <button

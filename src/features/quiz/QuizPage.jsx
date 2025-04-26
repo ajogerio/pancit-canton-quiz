@@ -23,7 +23,7 @@ export default function QuizPage() {
   }, [questionNumber, questionsTotal]);
 
   return (
-    <main className="flex flex-col items-center min-h-screen mx-auto py-[18px]">
+    <main className="flex flex-col items-center min-h-screen mx-auto gap-[30px] py-[18px]">
       <ProgressBar
         questionsTotal={questionsTotal}
         questionNumber={questionNumber}

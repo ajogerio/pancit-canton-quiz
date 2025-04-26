@@ -12,14 +12,16 @@ export default function ChoiceCard({
 
   return (
     <div
-      className={`flex flex-row cursor-pointer rounded-full text-white my-5 gap-1 ${
-        selectedChoice === currentLetter ? "bg-green-400" : "bg-gray-600"
+      className={`flex flex-row items-center gap-[36px] cursor-pointer rounded-lg p-4 text-[#edcd44] font-extrabold ${
+        selectedChoice === currentLetter ? "bg-[#81cad6]" : "bg-[#dc3e26]"
       }`}
       onClick={() => {
         onChoiceClick(currentLetter);
       }}
     >
-      <div>{currentLetter}</div>
+      <div className="rounded-full bg-[#edcd44] text-[#dc3e26] font-bold flex items-center justify-center w-12 h-12">
+        {currentLetter}
+      </div>
       <div>{choice}</div>
     </div>
   );
