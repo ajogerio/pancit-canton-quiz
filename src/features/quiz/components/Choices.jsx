@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useReducer } from "react";
 import { choicesPerQuestion } from "../data/choices";
+import { choiceInfo } from "../data/choiceInfo";
 import PropTypes from "prop-types";
 import ChoiceCard from "./ChoiceCard";
 
@@ -52,6 +53,9 @@ export default function Choices({
   const [state, dispatch] = useReducer(quizReducer, initialQuizFormState);
   const { quizForm, selectedChoice } = state;
 
+  // show the info of the selected choice
+  const [showChoiceInfo, setShowChoiceInfo] = useState(false);
+
   // current choices to be displayed
   const [choicesToDisplay, setChoicesToDisplay] = useState([]);
 
@@ -77,22 +81,32 @@ export default function Choices({
   return (
     <div>
       <div>
-        {choicesToDisplay.map((choice, index) => {
-          return (
-            <ChoiceCard
-              key={index}
-              index={index}
-              choice={choice}
-              selectedChoice={selectedChoice}
-              onChoiceClick={(selectedLetter) => {
-                dispatch({
-                  type: "SELECT_CHOICE",
-                  payload: { questionNumber, selectedLetter },
-                });
-              }}
-            />
-          );
-        })}
+        {!showChoiceInfo && // show this only when showChoiceInfo is false
+          choicesToDisplay.map((choice, index) => {
+            return (
+              <ChoiceCard
+                key={index}
+                index={index}
+                choice={choice}
+                selectedChoice={selectedChoice}
+                onChoiceClick={(selectedLetter) => {
+                  dispatch({
+                    type: "SELECT_CHOICE",
+                    payload: { questionNumber, selectedLetter },
+                  });
+                }}
+              />
+            );
+          })}
+
+        {showChoiceInfo && (
+          <div>
+            <p>
+              You chose <span className="font-semibold">{selectedChoice}</span>
+            </p>
+            <p>{choiceInfo[questionNumber][selectedChoice]}</p>
+          </div>
+        )}
       </div>
 
       <div className="flex flex-row">
@@ -101,17 +115,32 @@ export default function Choices({
             className="rounded-full bg-gray-400 text-white p-1 cursor-pointer"
             onClick={() => {
               setQuestionNumber((prev) => prev - 1);
+              setShowChoiceInfo(false);
             }}
           >
             Previous Question
           </button>
         )}
+
         {selectedChoice && // if a user has selected a choice
+          !showChoiceInfo && ( // and the choice information is not yet showing already showing
+            <button
+              className="rounded-full bg-gray-400 text-white p-1 cursor-pointer"
+              onClick={() => {
+                setShowChoiceInfo(true);
+              }}
+            >
+              Proceed
+            </button>
+          )}
+
+        {showChoiceInfo &&
           questionNumber < questionsTotal && ( // and the question number is less than the total questions
             <button
               className="rounded-full bg-gray-400 text-white p-1 cursor-pointer"
               onClick={() => {
                 setQuestionNumber((prev) => prev + 1);
+                setShowChoiceInfo(false);
               }}
             >
               Next Question
