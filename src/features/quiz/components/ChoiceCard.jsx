@@ -12,14 +12,25 @@ export default function ChoiceCard({
 
   return (
     <div
-      className={`flex flex-row items-center gap-[36px] cursor-pointer rounded-lg p-4 text-[#edcd44] font-extrabold ${
-        selectedChoice === currentLetter ? "bg-[#81cad6]" : "bg-[#dc3e26]"
-      }`}
+      className={`group relative flex flex-row items-center gap-[36px] 
+        cursor-pointer rounded-lg px-5 py-2.5 font-extrabold
+        ${
+          selectedChoice !== currentLetter
+            ? "hover:bg-white hover:shadow-lg hover:border-transparent hover:text-black  text-gray-400 border-gray-400"
+            : ""
+        }  
+        ${
+          selectedChoice === currentLetter
+            ? "bg-[#1a8954] shadow-lg text-black"
+            : "bg-gray-100 border-1"
+        }`}
       onClick={() => {
         onChoiceClick(currentLetter);
       }}
     >
-      <div className="rounded-full bg-[#edcd44] text-[#dc3e26] font-bold flex items-center justify-center w-12 h-12">
+      <div className="hidden group-hover:block absolute left-0 w-1.5 h-[90%] bg-[#1a8954] rounded-full"></div>
+
+      <div className="rounded-full bg-gray-100 text-grey-200 font-bold flex items-center justify-center w-12 h-12">
         {currentLetter}
       </div>
       <div>{choice}</div>

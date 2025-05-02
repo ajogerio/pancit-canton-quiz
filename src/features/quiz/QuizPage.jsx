@@ -19,25 +19,37 @@ export default function QuizPage() {
 
   useEffect(() => {
     // update the progress
-    setProgress(Math.round((questionNumber / questionsTotal) * 100));
+    setProgress(Math.round((questionNumber / questionsTotal) * 100) - 10);
   }, [questionNumber, questionsTotal]);
 
   return (
-    <main className="flex flex-col items-center min-h-screen mx-auto gap-[30px] py-[18px]">
-      <ProgressBar
-        questionsTotal={questionsTotal}
-        questionNumber={questionNumber}
-        progress={progress}
-      />
-      <Question
-        questionNumber={questionNumber}
-        questionsTotal={questionsTotal}
-      />
-      <Choices
-        questionsTotal={questionsTotal}
-        questionNumber={questionNumber}
-        setQuestionNumber={setQuestionNumber}
-      />
+    <main className="flex items-center justify-center min-h-screen mx-auto gap-[30px] py-[18px] bg-[#1a8954] px-10">
+      <div className="flex flex-col items-center bg-[#ffffff] py-10 px-20 rounded-2xl max-w-7xl w-full">
+        <div className="flex flex-col items-center justify-center w-full gap-5">
+          <div className="flex items-center gap-5">
+            <p>Pancit Canton Quiz</p>
+            <div className="flex flex-col">
+              <p>{progress}%</p>
+              <ProgressBar
+                questionsTotal={questionsTotal}
+                questionNumber={questionNumber}
+                progress={progress}
+              />
+            </div>
+          </div>
+          <div className="flex flex-col items-center justify-center bg-gray-100 rounded-2xl w-full">
+            <Question
+              questionNumber={questionNumber}
+              questionsTotal={questionsTotal}
+            />
+            <Choices
+              questionsTotal={questionsTotal}
+              questionNumber={questionNumber}
+              setQuestionNumber={setQuestionNumber}
+            />
+          </div>
+        </div>
+      </div>
     </main>
   );
 }

@@ -83,7 +83,7 @@ export default function Choices({
   }, [quizForm]);
 
   return (
-    <div className="flex flex-col items-center gap-4 px-10">
+    <div className="flex flex-col items-center gap-4 px-10 w-full">
       <div className="flex flex-col gap-4 min-h-40">
         {!showChoiceInfo &&
           choicesToDisplay.map((choice, index) => (
