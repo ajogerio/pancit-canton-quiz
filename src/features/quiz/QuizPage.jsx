@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import ProgressBar from "./components/ProgressBar";
 import Question from "./components/Question";
 import Choices from "./components/Choices";
+import PreviousButton from "./components/PreviousButton";
+import NextButton from "./components/NextButton";
 
 export default function QuizPage() {
   // total number of questions
@@ -23,7 +25,7 @@ export default function QuizPage() {
   }, [questionNumber, questionsTotal]);
 
   return (
-    <main className="flex items-center justify-center min-h-screen mx-auto gap-[30px] py-[18px] bg-[#1a8954] px-10">
+    <main className="flex items-center justify-center min-h-screen py-10 bg-[#1a8954] px-5">
       <div className="flex flex-col items-center bg-[#ffffff] py-10 px-20 rounded-2xl max-w-7xl w-full">
         <div className="flex flex-col items-center justify-center w-full gap-5">
           <div className="flex items-center gap-5">
@@ -47,6 +49,10 @@ export default function QuizPage() {
               questionNumber={questionNumber}
               setQuestionNumber={setQuestionNumber}
             />
+          </div>
+          <div className="flex items-center justify-center max-w-xl w-full gap-2">
+            <PreviousButton />
+            <NextButton />
           </div>
         </div>
       </div>

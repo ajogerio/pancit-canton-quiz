@@ -63,6 +63,11 @@ export default function Choices({
   // current choices to be displayed
   const [choicesToDisplay, setChoicesToDisplay] = useState([]);
 
+  // this will check if the navigation buttons can be selected or not
+  const [enableNextButton, setEnableNextButton] = useState(false);
+  const [enableBackButton, setEnableBackButton] = useState(false);
+  const [enableFinishButton, setEnableFinishButton] = useState(false);
+
   // select the choices to be rendered depending on the question number
   // AND highlight a choice if it was previously selected
   useEffect(() => {
@@ -101,7 +106,7 @@ export default function Choices({
             />
           ))}
 
-        {showChoiceInfo && (
+        {/* {showChoiceInfo && (
           <div className="">
             <p>
               You chose{" "}
@@ -115,11 +120,11 @@ export default function Choices({
             </p>
             <p>{choiceInfo[questionNumber][selectedChoice]}</p>
           </div>
-        )}
+        )} */}
       </div>
 
       <div className="flex flex-row gap-2">
-        {questionNumber > 1 && (
+        {/* {questionNumber > 1 && (
           <button
             className="rounded-full bg-[#dc3e26] text-white p-1 cursor-pointer w-12 h-12"
             onClick={() => {
@@ -129,9 +134,9 @@ export default function Choices({
           >
             <i className="fa-solid fa-arrow-left"></i>
           </button>
-        )}
+        )} */}
 
-        {selectedChoice && !showChoiceInfo && (
+        {/* {selectedChoice && !showChoiceInfo && (
           <button
             className="rounded-full bg-[#dc3e26] text-white p-1 cursor-pointer w-12 h-12"
             onClick={() => {
@@ -140,9 +145,9 @@ export default function Choices({
           >
             <i className="fa-solid fa-arrow-right"></i>
           </button>
-        )}
+        )} */}
 
-        {showChoiceInfo && (
+        {/* {showChoiceInfo && (
           <>
             <button
               className="rounded-full bg-[#dc3e26] text-white p-1 cursor-pointer"
@@ -161,8 +166,8 @@ export default function Choices({
                   setShowChoiceInfo(false);
                 }}
               >
-                <i className="fa-solid fa-arrow-right"></i>
-              </button>
+                {/* <i className="fa-solid fa-arrow-right"></i> */}
+        {/* </button>
             ) : (
               <button
                 className="rounded-full bg-green-500 text-white p-1 cursor-pointer"
@@ -173,8 +178,8 @@ export default function Choices({
                 Finish Quiz
               </button>
             )}
-          </>
-        )}
+          </> */}
+        {/* )} */}
       </div>
     </div>
   );
