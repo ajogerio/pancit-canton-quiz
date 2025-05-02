@@ -4,6 +4,7 @@ import Question from "./components/Question";
 import Choices from "./components/Choices";
 import PreviousButton from "./components/PreviousButton";
 import NextButton from "./components/NextButton";
+import FinishButton from "./components/FinishButton";
 
 export default function QuizPage() {
   // total number of questions
@@ -50,9 +51,15 @@ export default function QuizPage() {
               setQuestionNumber={setQuestionNumber}
             />
           </div>
-          <div className="flex items-center justify-center max-w-xl w-full gap-2">
-            <PreviousButton />
-            <NextButton />
+          <div className="flex w-full gap-5 sm:flex-row flex-col">
+            <div className="w-full h-full"></div>
+            <div className="flex items-center justify-center max-w-xl w-full gap-2">
+              <PreviousButton />
+              <NextButton />
+            </div>
+            <div className="w-full flex justify-center sm:justify-end">
+              <FinishButton />
+            </div>
           </div>
         </div>
       </div>
