@@ -16,13 +16,8 @@ export default function ChoiceCard({
         cursor-pointer rounded-lg px-5 py-2.5 font-extrabold
         ${
           selectedChoice !== currentLetter
-            ? "hover:bg-white hover:shadow-lg hover:border-transparent hover:text-black  text-gray-400 border-gray-400"
-            : ""
-        }  
-        ${
-          selectedChoice === currentLetter
-            ? "bg-[#1a8954] shadow-lg text-black"
-            : "bg-gray-100 border-1"
+            ? "hover:bg-white hover:shadow-lg hover:border-transparent hover:text-[#1a8954]  text-gray-400 border-gray-400 bg-gray-100 border-1"
+            : "bg-[#1a8954] shadow-lg text-white"
         }`}
       onClick={() => {
         onChoiceClick(currentLetter);
@@ -30,7 +25,10 @@ export default function ChoiceCard({
     >
       <div className="hidden group-hover:block absolute left-0 w-1.5 h-[90%] bg-[#1a8954] rounded-full"></div>
 
-      <div className="rounded-full bg-gray-100 text-grey-200 font-bold flex items-center justify-center w-12 h-12">
+      <div
+        className={`rounded-full font-bold flex items-center justify-center w-12 h-12
+      ${selectedChoice !== currentLetter ? "bg-gray-100 text-grey-200 group-hover:bg-[#1a8954] group-hover:text-white" : "bg-white text-[#1a8954]"}`}
+      >
         {currentLetter}
       </div>
       <div>{choice}</div>
