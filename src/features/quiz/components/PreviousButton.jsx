@@ -5,17 +5,17 @@ export default function PreviousButton({ enableBackButton }) {
   console.log(`Enable back button: ${enableBackButton}`);
   return (
     <button
-      className={`flex flex-row items-center justify-between w-full sm:w-30 
+      className={`group flex flex-row items-center justify-between w-full sm:w-30 
     h-10 rounded-full ${
       enableBackButton
-        ? "bg-[#1a8954] text-white shadow-lg"
+        ? "bg-[#1a8954] text-white shadow-lg hover:bg-white hover:text-[#1a8954] hover:cursor-pointer active:scale-95"
         : "bg-gray-100  text-gray-400"
     }`}
       disabled={!enableBackButton}
     >
       <div
         className={`flex justify-center items-center h-full  w-10 rounded-full ${
-          enableBackButton ? "bg-white text-[#1a8954]" : "bg-gray-200"
+          enableBackButton ? "bg-white text-[#1a8954] group-hover:bg-[#1a8954] group-hover:text-white group-active:bg-[#166e45]" : "bg-gray-200"
         }`}
       >
         <i className={`fa-solid fa-arrow-left`}></i>
