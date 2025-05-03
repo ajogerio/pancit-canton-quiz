@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useReducer } from "react";
-import { useNavigate } from "react-router-dom";
-import { choicesPerQuestion, choiceLetters } from "../data/choices";
-import { choiceInfo } from "../data/choiceInfo";
+// import { useNavigate } from "react-router-dom";
+import { choicesPerQuestion } from "../data/choices";
+// import { choiceInfo } from "../data/choiceInfo";
 import PropTypes from "prop-types";
 import ChoiceCard from "./ChoiceCard";
 
@@ -48,29 +48,28 @@ function quizReducer(state, action) {
 export default function Choices({
   questionsTotal,
   questionNumber,
-  setQuestionNumber,
+  // setQuestionNumber,
+  setEnableNextButton,
+  setEnableFinishButton,
 }) {
   // for navigation
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   // this will hold all the previous choice data so it persists
   const [state, dispatch] = useReducer(quizReducer, initialQuizFormState);
   const { quizForm, selectedChoice } = state;
 
   // show the info of the selected choice
-  const [showChoiceInfo, setShowChoiceInfo] = useState(false);
+  // const [showChoiceInfo, setShowChoiceInfo] = useState(false);
 
   // current choices to be displayed
   const [choicesToDisplay, setChoicesToDisplay] = useState([]);
 
-  // this will check if the navigation buttons can be selected or not
-  const [enableNextButton, setEnableNextButton] = useState(false);
-  const [enableBackButton, setEnableBackButton] = useState(false);
-  const [enableFinishButton, setEnableFinishButton] = useState(false);
-
   // select the choices to be rendered depending on the question number
   // AND highlight a choice if it was previously selected
   useEffect(() => {
+    const selected = quizForm[questionNumber];
+
     // fetch the choices to display
     setChoicesToDisplay(choicesPerQuestion[questionNumber]);
     console.log(`New Set of Choices: ${choicesPerQuestion[questionNumber]}`);
@@ -81,7 +80,25 @@ export default function Choices({
       payload: quizForm[questionNumber],
     });
     console.log(`New Question Number: ${questionNumber}\n`);
-  }, [questionNumber, quizForm]);
+
+    // set the appropriate states of the navigation and finish buttons
+    if (selected) {
+      if (questionNumber === questionsTotal) {
+        setEnableFinishButton(true);
+      } else {
+        setEnableNextButton(true);
+      }
+    } else {
+      setEnableFinishButton(false);
+      setEnableNextButton(false);
+    }
+  }, [
+    questionNumber,
+    quizForm,
+    setEnableNextButton,
+    setEnableFinishButton,
+    questionsTotal,
+  ]);
 
   useEffect(() => {
     console.log(quizForm);
@@ -90,21 +107,20 @@ export default function Choices({
   return (
     <div className="flex flex-col items-center gap-4 px-10 w-full">
       <div className="flex flex-col gap-4 min-h-40">
-        {!showChoiceInfo &&
-          choicesToDisplay.map((choice, index) => (
-            <ChoiceCard
-              key={index}
-              index={index}
-              choice={choice}
-              selectedChoice={selectedChoice}
-              onChoiceClick={(selectedLetter) => {
-                dispatch({
-                  type: "SELECT_CHOICE",
-                  payload: { questionNumber, selectedLetter },
-                });
-              }}
-            />
-          ))}
+        {choicesToDisplay.map((choice, index) => (
+          <ChoiceCard
+            key={index}
+            index={index}
+            choice={choice}
+            selectedChoice={selectedChoice}
+            onChoiceClick={(selectedLetter) => {
+              dispatch({
+                type: "SELECT_CHOICE",
+                payload: { questionNumber, selectedLetter },
+              });
+            }}
+          />
+        ))}
 
         {/* {showChoiceInfo && (
           <div className="">
@@ -189,4 +205,6 @@ Choices.propTypes = {
   questionsTotal: PropTypes.number,
   questionNumber: PropTypes.number,
   setQuestionNumber: PropTypes.func,
+  setEnableNextButton: PropTypes.func,
+  setEnableFinishButton: PropTypes.func,
 };

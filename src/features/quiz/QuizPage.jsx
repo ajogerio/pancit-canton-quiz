@@ -16,6 +16,11 @@ export default function QuizPage() {
   // track the progress of the user
   const [progress, setProgress] = useState(0);
 
+  // this will check if the navigation buttons can be selected or not
+  const [enableNextButton, setEnableNextButton] = useState(false);
+  const [enableBackButton, setEnableBackButton] = useState(true);
+  const [enableFinishButton, setEnableFinishButton] = useState(false);
+
   useEffect(() => {
     console.log(progress);
   }, [progress]);
@@ -23,6 +28,13 @@ export default function QuizPage() {
   useEffect(() => {
     // update the progress
     setProgress(Math.round((questionNumber / questionsTotal) * 100) - 10);
+
+    // check if we can enable the back button
+    if (questionNumber == 1) {
+      setEnableBackButton(true);
+    } else {
+      setEnableBackButton(false);
+    }
   }, [questionNumber, questionsTotal]);
 
   return (
@@ -49,16 +61,18 @@ export default function QuizPage() {
               questionsTotal={questionsTotal}
               questionNumber={questionNumber}
               setQuestionNumber={setQuestionNumber}
+              setEnableNextButton={setEnableNextButton}
+              setEnableFinishButton={setEnableFinishButton}
             />
           </div>
           <div className="flex w-full gap-5 sm:flex-row flex-col">
             <div className="w-full h-full"></div>
             <div className="flex items-center justify-center max-w-xl w-full gap-2">
-              <PreviousButton />
-              <NextButton />
+              <PreviousButton enableBackButton={enableBackButton} />
+              <NextButton enableNextButton={enableNextButton} />
             </div>
             <div className="w-full flex justify-center sm:justify-end">
-              <FinishButton />
+              <FinishButton enableFinishButton={enableFinishButton} />
             </div>
           </div>
         </div>
