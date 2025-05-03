@@ -101,8 +101,8 @@ export default function Choices({
   }, [quizForm]);
 
   return (
-    <div className="flex flex-col items-center gap-4 px-10 w-full">
-      <div className="flex flex-col gap-4 min-h-40">
+    <div className="flex flex-col items-center gap-4 w-full">
+      <div className="flex flex-col gap-4 min-h-40 w-full">
         {choicesToDisplay.map((choice, index) => (
           <ChoiceCard
             key={index}

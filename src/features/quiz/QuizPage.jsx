@@ -56,7 +56,7 @@ export default function QuizPage() {
               />
             </div>
           </div>
-          <div className="flex flex-col items-center justify-center bg-gray-100 rounded-2xl w-full">
+          <div className="flex flex-col items-center justify-center bg-gray-100 rounded-2xl w-full py-15 px-40 gap-5">
             <Question
               questionNumber={questionNumber}
               questionsTotal={questionsTotal}

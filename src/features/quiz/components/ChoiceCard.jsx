@@ -27,7 +27,11 @@ export default function ChoiceCard({
 
       <div
         className={`rounded-full font-bold flex items-center justify-center w-12 h-12
-      ${selectedChoice !== currentLetter ? "bg-gray-100 text-grey-200 group-hover:bg-[#1a8954] group-hover:text-white" : "bg-white text-[#1a8954]"}`}
+      ${
+        selectedChoice !== currentLetter
+          ? "bg-gray-100 text-grey-200 group-hover:bg-[#1a8954] group-hover:text-white"
+          : "bg-white text-[#1a8954]"
+      }`}
       >
         {currentLetter}
       </div>
