@@ -49,6 +49,7 @@ export default function Choices({
   questionNumber,
   setEnableNextButton,
   setEnableFinishButton,
+  setProgress,
 }) {
   // this will hold all the previous choice data so it persists
   const [state, dispatch] = useReducer(quizReducer, initialQuizFormState);
@@ -113,6 +114,12 @@ export default function Choices({
                 type: "SELECT_CHOICE",
                 payload: { questionNumber, selectedLetter },
               });
+
+              const selected = quizForm[questionNumber];
+              if (!selected) {
+                setProgress(Math.round((questionNumber / questionsTotal) * 100));
+              } 
+              
             }}
           />
         ))}
@@ -127,4 +134,5 @@ Choices.propTypes = {
   setQuestionNumber: PropTypes.func,
   setEnableNextButton: PropTypes.func,
   setEnableFinishButton: PropTypes.func,
+  setProgress: PropTypes.func,
 };

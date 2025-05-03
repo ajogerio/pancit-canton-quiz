@@ -26,9 +26,6 @@ export default function QuizPage() {
   }, [progress]);
 
   useEffect(() => {
-    // update the progress
-    setProgress(Math.round((questionNumber / questionsTotal) * 100) - 10);
-
     // check if we can enable the back button
     if (questionNumber > 1) {
       setEnableBackButton(true);
@@ -37,7 +34,7 @@ export default function QuizPage() {
     }
 
     // check if we can enable the next button
-    if (questionNumber === 10) {
+    if (questionNumber === questionsTotal) {
       setEnableNextButton(false);
     } else {
       setEnableNextButton(true);
@@ -70,6 +67,7 @@ export default function QuizPage() {
               setQuestionNumber={setQuestionNumber}
               setEnableNextButton={setEnableNextButton}
               setEnableFinishButton={setEnableFinishButton}
+              setProgress={setProgress}
             />
           </div>
           <div className="flex w-full gap-5 sm:flex-row flex-col">
