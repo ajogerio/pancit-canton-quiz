@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useReducer } from "react";
-// import { useNavigate } from "react-router-dom";
 import { choicesPerQuestion } from "../data/choices";
 // import { choiceInfo } from "../data/choiceInfo";
 import PropTypes from "prop-types";
@@ -48,13 +47,9 @@ function quizReducer(state, action) {
 export default function Choices({
   questionsTotal,
   questionNumber,
-  // setQuestionNumber,
   setEnableNextButton,
   setEnableFinishButton,
 }) {
-  // for navigation
-  // const navigate = useNavigate();
-
   // this will hold all the previous choice data so it persists
   const [state, dispatch] = useReducer(quizReducer, initialQuizFormState);
   const { quizForm, selectedChoice } = state;
@@ -121,81 +116,6 @@ export default function Choices({
             }}
           />
         ))}
-
-        {/* {showChoiceInfo && (
-          <div className="">
-            <p>
-              You chose{" "}
-              <span className="font-semibold">
-                {
-                  choicesPerQuestion[questionNumber][
-                    choiceLetters.indexOf(selectedChoice)
-                  ]
-                }
-              </span>
-            </p>
-            <p>{choiceInfo[questionNumber][selectedChoice]}</p>
-          </div>
-        )} */}
-      </div>
-
-      <div className="flex flex-row gap-2">
-        {/* {questionNumber > 1 && (
-          <button
-            className="rounded-full bg-[#dc3e26] text-white p-1 cursor-pointer w-12 h-12"
-            onClick={() => {
-              setQuestionNumber((prev) => prev - 1);
-              setShowChoiceInfo(false);
-            }}
-          >
-            <i className="fa-solid fa-arrow-left"></i>
-          </button>
-        )} */}
-
-        {/* {selectedChoice && !showChoiceInfo && (
-          <button
-            className="rounded-full bg-[#dc3e26] text-white p-1 cursor-pointer w-12 h-12"
-            onClick={() => {
-              setShowChoiceInfo(true);
-            }}
-          >
-            <i className="fa-solid fa-arrow-right"></i>
-          </button>
-        )} */}
-
-        {/* {showChoiceInfo && (
-          <>
-            <button
-              className="rounded-full bg-[#dc3e26] text-white p-1 cursor-pointer"
-              onClick={() => {
-                setShowChoiceInfo(false);
-              }}
-            >
-              Edit Answer
-            </button>
-
-            {questionNumber < questionsTotal ? (
-              <button
-                className="rounded-full bg-[#dc3e26] text-white p-1 cursor-pointer w-12 h-12"
-                onClick={() => {
-                  setQuestionNumber((prev) => prev + 1);
-                  setShowChoiceInfo(false);
-                }}
-              >
-                {/* <i className="fa-solid fa-arrow-right"></i> */}
-        {/* </button>
-            ) : (
-              <button
-                className="rounded-full bg-green-500 text-white p-1 cursor-pointer"
-                onClick={() => {
-                  navigate("/calculating");
-                }}
-              >
-                Finish Quiz
-              </button>
-            )}
-          </> */}
-        {/* )} */}
       </div>
     </div>
   );

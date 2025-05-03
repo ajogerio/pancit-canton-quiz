@@ -35,6 +35,13 @@ export default function QuizPage() {
     } else {
       setEnableBackButton(false);
     }
+
+    // check if we can enable the next button
+    if (questionNumber === 10) {
+      setEnableNextButton(false);
+    } else {
+      setEnableNextButton(true);
+    }
   }, [questionNumber, questionsTotal]);
 
   return (
