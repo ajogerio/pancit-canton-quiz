@@ -13,7 +13,7 @@ export default function ChoiceCard({
   return (
     <div
       className={`group relative flex flex-row items-center gap-[36px] 
-        cursor-pointer rounded-lg px-5 py-2.5 font-extrabold
+        cursor-pointer px-5 py-2.5 font-extrabold
         ${
           selectedChoice !== currentLetter
             ? "hover:bg-white hover:shadow-lg hover:border-transparent hover:text-[#1a8954]  text-gray-400 border-gray-400 bg-gray-100 border-1"
@@ -30,7 +30,7 @@ export default function ChoiceCard({
       ${
         selectedChoice !== currentLetter
           ? "bg-gray-100 text-grey-200 group-hover:bg-[#1a8954] group-hover:text-white"
-          : "bg-white text-[#1a8954]"
+          : "bg-white text-[#1a8954] shadow-lg"
       }`}
       >
         {currentLetter}
