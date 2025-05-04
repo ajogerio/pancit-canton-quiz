@@ -1,7 +1,10 @@
 import React from "react";
 import CustomComponent from "./components/CustomComponent";
+import { useNavigate } from "react-router-dom";
 
 export default function HomePage() {
+  const navigate = useNavigate();
+
   return (
     <main className="flex items-center justify-center min-h-screen bg-white gap-4 px-60">
       <div className="flex flex-col gap-5">
@@ -13,9 +16,16 @@ export default function HomePage() {
           Embark on a flavorful adventure and discover which Pancit Canton
           flavor matches your personality!
         </h2>
-        <button className="text-start bg-[#1a8954] text-white w-fit 
+        <button
+          className="text-start bg-[#1a8954] text-white w-fit 
         shadow-xl px-10 py-2 rounded-md hover:cursor-pointer 
-         hover:bg-[#166e45] border-2 border-[#1a8954] active:bg-[#115f38]">Start Quiz</button>
+         hover:bg-[#166e45] border-2 border-[#1a8954]  active:bg-[#115f38]"
+          onClick={() => {
+            navigate("/quiz");
+          }}
+        >
+          Start Quiz
+        </button>
       </div>
       <div>
         <img src="/home-page-image-1.png"></img>
