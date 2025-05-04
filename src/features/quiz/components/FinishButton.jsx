@@ -1,7 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { useNavigate } from "react-router-dom";
 
 export default function FinishButton({ enableFinishButton }) {
+  const navigate = useNavigate();
   return (
     <button
       className={`flex flex-row justify-center items-center w-full sm:w-30 h-10 rounded-full 
@@ -11,6 +13,7 @@ export default function FinishButton({ enableFinishButton }) {
           : "bg-gray-100 text-gray-400 hover:cursor-not-allowed"
       }`}
       disabled={!enableFinishButton}
+      onClick={() => {navigate("/calculating")}}
     >
       <p>Finish</p>
     </button>

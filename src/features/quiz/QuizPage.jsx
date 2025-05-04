@@ -37,6 +37,11 @@ export default function QuizPage() {
     if (questionNumber === questionsTotal) {
       setEnableNextButton(false);
     } 
+
+    // scroll back up
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, 10);
   }, [questionNumber, questionsTotal]);
 
   return (
