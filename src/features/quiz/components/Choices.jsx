@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useReducer } from "react";
 import { choicesPerQuestion } from "../data/choices";
-// import { choiceInfo } from "../data/choiceInfo";
 import PropTypes from "prop-types";
 import ChoiceCard from "./ChoiceCard";
 
@@ -88,6 +87,8 @@ export default function Choices({
       setEnableFinishButton(false);
       setEnableNextButton(false);
     }
+
+    // set show choice info back to false ?
   }, [
     questionNumber,
     quizForm,
@@ -108,18 +109,24 @@ export default function Choices({
             key={index}
             index={index}
             choice={choice}
+            // showChoiceInfo={showChoiceInfo}
+            questionNumber={questionNumber}
             selectedChoice={selectedChoice}
             onChoiceClick={(selectedLetter) => {
+              // update the quiz form
               dispatch({
                 type: "SELECT_CHOICE",
                 payload: { questionNumber, selectedLetter },
               });
 
+              // update the progress bar
               const selected = quizForm[questionNumber];
               if (!selected) {
-                setProgress(Math.round((questionNumber / questionsTotal) * 100));
-              } 
-              
+                setProgress(
+                  Math.round((questionNumber / questionsTotal) * 100)
+                );
+              }
+
             }}
           />
         ))}
