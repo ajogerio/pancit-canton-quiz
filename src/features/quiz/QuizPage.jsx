@@ -18,8 +18,8 @@ export default function QuizPage() {
 
   // this will check if the navigation buttons can be selected or not
   const [enableNextButton, setEnableNextButton] = useState(false);
-  const [enableBackButton, setEnableBackButton] = useState(true);
-  const [enableFinishButton, setEnableFinishButton] = useState(true);
+  const [enableBackButton, setEnableBackButton] = useState(false);
+  const [enableFinishButton, setEnableFinishButton] = useState(false);
 
   useEffect(() => {
     console.log(progress);
@@ -36,9 +36,7 @@ export default function QuizPage() {
     // check if we can enable the next button
     if (questionNumber === questionsTotal) {
       setEnableNextButton(false);
-    } else {
-      setEnableNextButton(true);
-    }
+    } 
   }, [questionNumber, questionsTotal]);
 
   return (
