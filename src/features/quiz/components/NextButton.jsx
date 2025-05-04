@@ -15,7 +15,7 @@ export default function NextButton({ enableNextButton, setQuestionNumber }) {
         setQuestionNumber((prev) => prev + 1);
       }}
     >
-      <p className="ml-7">Next</p>
+      <p className="flex-1 text-center">Next</p>
       <div
         className={`flex justify-center items-center h-full  w-10 rounded-full ${
           enableNextButton

@@ -41,9 +41,9 @@ export default function QuizPage() {
 
   return (
     <main className="flex items-center justify-center min-h-screen py-10 bg-[#1a8954] px-5">
-      <div className="flex flex-col items-center bg-[#ffffff] py-10 px-20 rounded-2xl max-w-7xl w-full">
+      <div className="flex flex-col items-center bg-[#ffffff] sm:py-10 py-5 px-10 sm:px-20 rounded-2xl max-w-7xl w-full">
         <div className="flex flex-col items-center justify-center w-full gap-5">
-          <div className="flex items-center gap-5">
+          <div className="flex flex-col sm:flex-row items-center gap-5">
             <p>Pancit Canton Quiz</p>
             <div className="flex flex-col">
               <p>{progress}%</p>
@@ -54,7 +54,7 @@ export default function QuizPage() {
               />
             </div>
           </div>
-          <div className="flex flex-col items-center justify-center bg-gray-100 rounded-2xl w-full py-15 px-40 gap-5">
+          <div className="flex flex-col items-center justify-center bg-gray-100 rounded-2xl w-full px-10 py-5 md:py-15 md:px-25 gap-5">
             <Question
               questionNumber={questionNumber}
               questionsTotal={questionsTotal}

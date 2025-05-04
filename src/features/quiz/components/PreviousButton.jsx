@@ -28,7 +28,7 @@ export default function PreviousButton({
       >
         <i className={`fa-solid fa-arrow-left`}></i>
       </div>
-      <p className="mr-3">Previous</p>
+      <p className="flex-1 text-center">Previous</p>
     </button>
   );
 }

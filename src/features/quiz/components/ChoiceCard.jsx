@@ -46,7 +46,7 @@ export default function ChoiceCard({
 
       {/* show the choice info if selected*/}
       {selectedChoice === currentLetter && (
-        <div className=" flex justify-around items-center flex-wrap w-full h-auto bg-white rounded-b-sm">
+        <div className=" flex justify-around items-center flex-wrap w-full h-auto bg-white rounded-b-sm p-5">
           <div>
             <div>
               <p>
@@ -67,7 +67,7 @@ export default function ChoiceCard({
           </div>
           <div>
             <img
-              className="w-50 h-50 object-cover"
+              className="w-45 h-45 sm:w-50 sm:h-50 object-cover mt-5 sm:mt-0 rounded-lg"
               src={choiceImages[questionNumber][selectedChoice]}
             ></img>
           </div>
