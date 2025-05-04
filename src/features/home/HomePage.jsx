@@ -6,7 +6,7 @@ export default function HomePage() {
   const navigate = useNavigate();
 
   return (
-    <main className="flex flex-col 2xl:flex-row items-center justify-center min-h-screen bg-white 2xl:gap-4 2xl:px-60 gap-12 px-8 p-20">
+    <main className="flex flex-col 2xl:flex-row items-center justify-center min-h-screen bg-white 2xl:gap-4 2xl:px-60 px-8 p-20">
       <div className="flex flex-col gap-5 flex-1">
         <h1 className="text-6xl text-center 2xl:text-left">
           Welcome to the <br></br>
