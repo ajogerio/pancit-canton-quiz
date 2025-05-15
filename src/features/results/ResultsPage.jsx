@@ -83,11 +83,13 @@ export default function ResultsPage() {
         <div className="flex justify-center items-center gap-3">
           <div
             className="flex flex-col justify-center items-center h-auto bg-white
-                        rounded-2xl py-10"
+                        rounded-2xl py-10 gap-2"
           >
-            <img className="w-1/2 h-1/2" src="sweet-and-spicy-package.png" />
-            <h1 className="text-3xl text-[#e4300b]">Sweet and Spicy</h1>
-            <button>LEARN MORE</button>
+            <img className="w-1/2 h-1/2" src="original-package.png" />
+            <h1 className="text-3xl text-[#e8be04]">Original</h1>
+            <button className="bg-[#e8be04] text-white rounded-full py-2 px-5">
+              LEARN MORE
+            </button>
           </div>
           <div
             className="flex flex-col justify-center items-center h-auto bg-white
@@ -101,11 +103,13 @@ export default function ResultsPage() {
           </div>
           <div
             className="flex flex-col justify-center items-center h-auto bg-white
-                        rounded-2xl py-10"
+                        rounded-2xl py-10 gap-2"
           >
-            <img className="w-1/2 h-1/2" src="sweet-and-spicy-package.png" />
-            <h1 className="text-3xl text-[#e4300b]">Sweet and Spicy</h1>
-            <button>LEARN MORE</button>
+            <img className="w-1/2 h-1/2" src="extra-hot-chili-package.png" />
+            <h1 className="text-3xl text-[#a11b11]">Extra Hot Chili</h1>
+            <button className="bg-[#a11b11] text-white rounded-full py-2 px-5">
+              LEARN MORE
+            </button>
           </div>
         </div>
       </section>
