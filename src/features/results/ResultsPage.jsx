@@ -17,7 +17,7 @@ export default function ResultsPage() {
               <p className="text-5xl">flavor</p>
             </div>
             <button
-              className="bg-white text-[#1ea913] rounded-full px-5 py-3 font-bold tracking-wider
+              className="bg-white text-[#1ea913] rounded-full px-5 py-3 tracking-wider
               hover:cursor-pointer hover:text-white hover:bg-[#1ea913]"
             >
               LEARN MORE
@@ -25,7 +25,7 @@ export default function ResultsPage() {
           </div>
         </div>
       </section>
-      <section className="flex flex-col gap-15 py-10 px-80">
+      <section className="flex flex-col justify-center items-center gap-15 py-10 px-80">
         <div className="flex flex-col justify-center items-center gap-2">
           <h1 className="text-[#1ea913] text-5xl">
             What&apos;s up with Kalamansi?
@@ -73,6 +73,40 @@ export default function ResultsPage() {
           >
             Read More
           </button>
+        </div>
+      </section>
+      <section className="flex flex-col items-center justify-center bg-gray-100 py-10 px-5 gap-2">
+        <h1 className="text-[#1ea913] text-5xl">
+          Check out the other flavors!
+        </h1>
+        <div className="bg-[#1ea913] h-1 w-20"></div>
+        <div className="flex justify-center items-center gap-3">
+          <div
+            className="flex flex-col justify-center items-center h-auto bg-white
+                        rounded-2xl py-10"
+          >
+            <img className="w-1/2 h-1/2" src="sweet-and-spicy-package.png" />
+            <h1 className="text-3xl text-[#e4300b]">Sweet and Spicy</h1>
+            <button>LEARN MORE</button>
+          </div>
+          <div
+            className="flex flex-col justify-center items-center h-auto bg-white
+                        rounded-2xl py-10 gap-2"
+          >
+            <img className="w-1/2 h-1/2" src="sweet-and-spicy-package.png" />
+            <h1 className="text-3xl text-[#e4300b]">Sweet and Spicy</h1>
+            <button className="bg-[#e4300b] text-white rounded-full py-2 px-5">
+              LEARN MORE
+            </button>
+          </div>
+          <div
+            className="flex flex-col justify-center items-center h-auto bg-white
+                        rounded-2xl py-10"
+          >
+            <img className="w-1/2 h-1/2" src="sweet-and-spicy-package.png" />
+            <h1 className="text-3xl text-[#e4300b]">Sweet and Spicy</h1>
+            <button>LEARN MORE</button>
+          </div>
         </div>
       </section>
     </main>
