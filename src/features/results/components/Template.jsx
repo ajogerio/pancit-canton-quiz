@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { useNavigate } from "react-router-dom";
 
 export default function Template({
   flavorName,
@@ -9,6 +10,19 @@ export default function Template({
   descriptionImage,
   otherFlavors,
 }) {
+  const navigate = useNavigate();
+
+  const handleOtherFlavorClick = (flavor) => {
+    if (flavor === "Original") {
+      navigate("/results/original");
+    } else if (flavor === "Kalamansi") {
+      navigate("/results/kalamansi");
+    } else if (flavor === "Extra Hot Chili") {
+      navigate("/results/extrahotchili");
+    } else {
+      navigate("/results/sweetandspicy");
+    }
+  };
   return (
     <main>
       <section>
@@ -101,7 +115,8 @@ export default function Template({
                 {flavor.name}
               </h1>
               <button
-                className={`bg-[${flavor.color}] text-white rounded-full py-2 px-5`}
+                className={`bg-[${flavor.color}] text-white rounded-full py-2 px-5 hover:cursor-pointer`}
+                onClick={() => handleOtherFlavorClick(flavor.name)}
               >
                 LEARN MORE
               </button>
