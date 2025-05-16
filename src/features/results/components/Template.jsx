@@ -1,7 +1,15 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "../../index.css";
 
-export default function ResultsPage() {
+export default function Template(
+  flavorName,
+  colorTheme,
+  backgroundImage,
+  descriptionText,
+  descriptionImage,
+  otherFlavors,
+) {
   return (
     <main>
       <section>
@@ -120,3 +128,12 @@ export default function ResultsPage() {
     </main>
   );
 }
+
+Template.propTypes = {
+  flavorName: PropTypes.string,
+  colorTheme: PropTypes.string,
+  backgroundImage: PropTypes.string,
+  descriptionText: PropTypes.string,
+  descriptionImage: PropTypes.string,
+  otherFlavors: PropTypes.object,
+};
