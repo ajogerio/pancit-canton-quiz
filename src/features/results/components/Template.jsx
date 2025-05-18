@@ -115,7 +115,22 @@ export default function Template({
                 {flavor.name}
               </h1>
               <button
-                className={`bg-[${flavor.color}] text-white rounded-full py-2 px-5 hover:cursor-pointer`}
+                style={{
+                  backgroundColor: flavor.color,
+                  color: "white",
+                  borderColor: flavor.color,
+                  borderWidth: "2px",
+                  borderStyle: "solid",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = "white";
+                  e.currentTarget.style.color = flavor.color;
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = flavor.color;
+                  e.currentTarget.style.color = "white";
+                }}
+                className={`rounded-full py-2 px-5 hover:cursor-pointer`}
                 onClick={() => handleOtherFlavorClick(flavor.name)}
               >
                 LEARN MORE
