@@ -1,72 +1,62 @@
 export const choiceImages = {
   1: {
-    A: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34", // Paris
-    B: "https://images.unsplash.com/photo-1549924231-f129b911e442", // New York
-    C: "https://images.unsplash.com/photo-1517722847084-6c7dd63c46b2", // Tokyo
-    D: "https://images.unsplash.com/photo-1533069024561-0105f3a3e10c", // London
-    E: "https://images.unsplash.com/photo-1509475826633-fed577a2c71b", // Rome
+    A: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhae4dDAO65lsY3jEPAE-Uy6tatqCZvOJNjoZASDaLMTJA9D2W9ut3yNTlMY54pb-3xclHgbRkQfxNDGHfpiaTQDZWl1vn0iBvZNTumjVliFVmzlifsQtrxXPvtulonXBK6amX8kx4Oy5kY/s640/z+%25284%2529.JPG", // Oblation
+    B: "https://scontent.fmnl17-5.fna.fbcdn.net/v/t1.6435-9/65041995_2775605852514298_8906987995458961408_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=f727a1&_nc_eui2=AeFOLToRbbScmEhGgtx79z5vgnOC3zntjWuCc4LfOe2NazuPC9Z-1eTO0t9X_6iOOoErgyqnCSi3HBb6dYe8y_Os&_nc_ohc=fMCAO10K47YQ7kNvwGYT8Cu&_nc_oc=AdlKPSjdGN9f3dtzm-tTYPK8HGc0ouomPL_QGrrwunEvxQwLpYXJB8CDg0Mee4YCDqo&_nc_zt=23&_nc_ht=scontent.fmnl17-5.fna&_nc_gid=LRjL9ouf9faHaq2YF84XaQ&oh=00_AfLeH8xExGjGtw6DitYhEwRx-Cqo3eVTHeuzoCIz-U2caA&oe=68525BD8", // Sunflowers
+    C: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgJYpijj6yGGpY71xurzHYh7iaCxOJcsfP8OQidgKI_vy8tZepu1GR2q10deAvrBKToxBMmcQrMdwHdtymPuIVTMXQshSJZIrt-YBv40Hxrb_U4Sk-WsJmdgClWDNELcXK6HevvL4Bs5ZM/s640/P2203501_1.jpg", // Ikot
+    D: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/UP_Diliman_Quezon_Hall.jpg/1200px-UP_Diliman_Quezon_Hall.jpg?20130406201219", // Quezon Hall
   },
   2: {
-    A: "https://upload.wikimedia.org/wikipedia/commons/7/73/Lion_waiting_in_Namibia.jpg",
-    B: "https://upload.wikimedia.org/wikipedia/commons/5/56/Tiger.50.jpg",
-    C: "https://upload.wikimedia.org/wikipedia/commons/3/37/African_Bush_Elephant.jpg",
-    D: "https://upload.wikimedia.org/wikipedia/commons/9/9f/Giraffe_standing.jpg",
-    E: "https://upload.wikimedia.org/wikipedia/commons/0/0f/Plains_Zebra_Equus_quagga.jpg",
+    A: "https://images.unsplash.com/photo-1558418294-9da149757efe?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Sky
+    B: "https://santosmauii.wordpress.com/wp-content/uploads/2014/02/img_17891.jpg", // Grass
+    C: "https://plus.unsplash.com/premium_photo-1674834298045-e405bc99076b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Clouds
+    D: "https://images.unsplash.com/photo-1594315590298-329f49c8dcb9?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Sun
   },
   3: {
-    A: "https://images.unsplash.com/photo-1584395630827-860eee694d7b", // Red
-    B: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e", // Blue
-    C: "https://images.unsplash.com/photo-1501004318641-b39e6451bec6", // Green
-    D: "https://images.unsplash.com/photo-1607082349567-56c52a3f8ff2", // Yellow
-    E: "https://images.unsplash.com/photo-1616627568538-eeb9d7df018b", // Purple
+    A: "https://compote.slate.com/images/277a0417-dc8b-4aa4-88a8-9d87a4420c0b.jpeg?crop=4120%2C2746%2Cx0%2Cy91", // Comic Sans
+    B: "https://i.etsystatic.com/27972996/r/il/0a36f0/4164122473/il_1080xN.4164122473_cuxe.jpg", // TNR
+    C: "https://cdn.osxdaily.com/wp-content/uploads/2021/04/how-to-enable-headphone-notifications-apple-watch.jpg", // sans Serif
+    D: "https://images.squarespace-cdn.com/content/573f3af337013b783febc526/1463762331687-HXY9TAUVKCX4HSSYFXDV/IMG_4423.JPG?content-type=image%2Fjpeg", // Nautica
   },
   4: {
-    A: "https://images.unsplash.com/photo-1605379399642-870262d3d051", // Soccer
-    B: "https://images.unsplash.com/photo-1583623025817-d180ba1f51b2", // Basketball
-    C: "https://images.unsplash.com/photo-1599058917212-dcbd3277bb17", // Tennis
-    D: "https://images.unsplash.com/photo-1581813507270-f4c0c1c36f46", // Baseball
-    E: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b", // Swimming
+    A: "https://i.pinimg.com/736x/22/fd/9a/22fd9ad59a2df6718465e20e4677b1b0.jpg", // Motivated
+    B: "https://pocarisweat.ng/wp-content/uploads/2023/12/shutterstock_2262323487-1.jpg", // Bakit ba
+    C: "https://as2.ftcdn.net/jpg/04/79/82/87/1000_F_479828722_QOyfXABWmublZXvBNzxwwyXgMUlHCkdz.jpg", // Ahh
+    D: "https://sinag.press/news/wp-content/uploads/2024/04/435279848_428445426454528_1506991794276407864_n-1.jpg", // Kakain
   },
   5: {
-    A: "https://images.unsplash.com/photo-1601924572619-43b07d1d442c", // Pizza
-    B: "https://images.unsplash.com/photo-1550547660-d9450f859349", // Burger
-    C: "https://images.unsplash.com/photo-1589307004394-3df2c95c2506", // Pasta
+    A: "https://i.pinimg.com/736x/f4/9d/d8/f49dd885a72854a07ab8424976fe0dfb.jpg", // Straight
+    B: "https://i.pinimg.com/1200x/3c/d9/7b/3cd97bdbf1bf556df334b8488ba2ab7b.jpg", // Depth
+    C: "https://upd.edu.ph/wp-content/uploads/2022/03/road-closure-shari-ah-bar.jpg", // Oval
     D: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c", // Sushi
-    E: "https://images.unsplash.com/photo-1550304943-4f24f54ddde9", // Salad
   },
   6: {
-    A: "https://images.unsplash.com/photo-1581093588401-23f0b6ee5cf5", // JavaScript
-    B: "https://images.unsplash.com/photo-1584697964192-11b229cfd3f3", // Python
-    C: "https://images.unsplash.com/photo-1581092914543-052e97ec83f0", // Java
-    D: "https://images.unsplash.com/photo-1629904853716-f0bc54eea481", // C++
-    E: "https://images.unsplash.com/photo-1629904853639-a6505efda852", // Ruby
+    A: "https://images.unsplash.com/photo-1546860255-95536c19724e", // Sili
+    B: "https://epicureanearth.com/wp-content/uploads/2024/09/all-about-the-calamansi-2048x1365.jpg", // Calamansi
+    C: "https://images.unsplash.com/photo-1636210589096-a53d5dacd702", // Garlic
+    D: "https://preview.redd.it/scrambled-eggs-cocktail-hotdogs-v0-vosoa09i9vmd1.jpeg?width=1080&crop=smart&auto=webp&s=daf7b5fc3980c3f0e6ecc8cccb3c030a9c795d4e", // Itlog at Hotdog
   },
   7: {
-    A: "https://images.unsplash.com/photo-1511376777868-611b54f68947", // Guitar
-    B: "https://images.unsplash.com/photo-1543294001-f90b44f8a5cf", // Piano
-    C: "https://images.unsplash.com/photo-1603052875528-378a34b51b1b", // Drums
-    D: "https://images.unsplash.com/photo-1504653605947-8f58c4b6d7e4", // Violin
-    E: "https://images.unsplash.com/photo-1596812161270-05ac67c5fd9d", // Flute
+    A: "https://themayakitchen.com/wp-content/uploads/2020/09/Kwek-%E2%80%93-Kwek-7.jpg", // Kwek-Kwek
+    B: "https://preview.redd.it/homemade-pork-siomai-v0-xwyejaw33rm81.jpg?width=1080&crop=smart&auto=webp&s=0ea8a98609bae6b163fb9c571ec547083dde6881", // Siomai
+    C: "https://www.kawalingpinoy.com/wp-content/uploads/2020/05/crispy-cheese-sticks-4-1152x1536.jpg", // Cheese sticks
+    D: "https://www.kawalingpinoy.com/wp-content/uploads/2015/04/crispy-dynamite-lumpia-3-1152x1536.jpg", // Dynamite
   },
   8: {
-    A: "https://images.unsplash.com/photo-1616352451286-e8893246c1cc", // Spring
-    B: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e", // Summer
-    C: "https://images.unsplash.com/photo-1476041800959-2f5c8a211cb3", // Autumn
-    D: "https://images.unsplash.com/photo-1608889178112-e3608980d964", // Winter
-    E: "https://images.unsplash.com/photo-1503437313881-503a91226402", // Rainy
+    A: "https://img.freepik.com/free-vector/all-right-emoji-illustration_23-2151298395.jpg?semt=ais_hybrid&w=740", // Tama
+    B: "https://i.pinimg.com/736x/40/49/37/404937b386ba448c4faceb2d2711d046.jpg", // Mali
+    C: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAGkYoFFOV_IfSWED5YoBGZnNrqOC8nVq9QTYC2sdVawFWBuERKe8oYEC1a4CrNWTgfqg&usqp=CAU", // Maybe
+    D: "hhttps://images.emojiterra.com/google/noto-emoji/unicode-16.0/color/1024px/1f914.png", // Mmmm
   },
   9: {
-    A: "https://images.unsplash.com/photo-1574226516831-e1dff420e37b", // Apple
-    B: "https://images.unsplash.com/photo-1574226516831-e1dff420e37b", // Banana
-    C: "https://images.unsplash.com/photo-1615486360435-209dbb57b336", // Orange
-    D: "https://images.unsplash.com/photo-1571689936223-3f5a4f871b3c", // Mango
-    E: "https://images.unsplash.com/photo-1573821663911-41e5f41b432b", // Grapes
+    A: "https://almerepinoystore.com/wp-content/uploads/2021/05/Lucky-Me-Pancit-Canton-Original-1.png", // Original
+    B: "https://almerepinoystore.com/wp-content/uploads/2021/05/Lucky-Me-Pancit-Canton-Extra-Hot-Chili.png", // Spicy
+    C: "https://almerepinoystore.com/wp-content/uploads/2023/04/lucky-me-sweet-and-spicy.png", // Sweet and Spicy
+    D: "https://almerepinoystore.com/wp-content/uploads/2021/05/Lucky-Me-Pancit-Canton-Kalamansi.png", // Kalamansi
   },
   10: {
-    A: "https://upload.wikimedia.org/wikipedia/commons/5/55/Mount_Everest_as_seen_from_Drukair2_PLW_edit.jpg",
-    B: "https://upload.wikimedia.org/wikipedia/commons/1/1c/Mount_Fuji_from_Hotel_Mt_Fuji_1996-5-6.jpg",
-    C: "https://upload.wikimedia.org/wikipedia/commons/9/91/Mount_Kilimanjaro.jpg",
-    D: "https://upload.wikimedia.org/wikipedia/commons/3/30/Denali_Mt_McKinley.jpg",
-    E: "https://upload.wikimedia.org/wikipedia/commons/b/bc/Mount_Elbrus_2006_summer.jpg",
+    A: "https://themayakitchen.com/wp-content/uploads/2020/09/Kwek-%E2%80%93-Kwek-7.jpg", // Kwek-Kwek
+    B: "https://preview.redd.it/homemade-pork-siomai-v0-xwyejaw33rm81.jpg?width=1080&crop=smart&auto=webp&s=0ea8a98609bae6b163fb9c571ec547083dde6881", // Siomai
+    C: "https://www.kawalingpinoy.com/wp-content/uploads/2020/05/crispy-cheese-sticks-4-1152x1536.jpg", // Cheese sticks
+    D: "https://www.kawalingpinoy.com/wp-content/uploads/2015/04/crispy-dynamite-lumpia-3-1152x1536.jpg", // Dynamite
   },
 };

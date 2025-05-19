@@ -1,75 +1,65 @@
 export const choicesPerQuestion = {
   1: [
-    "Paris",
-    "New York",
-    "Tokyo",
-    "London",
-    "Rome"
+    "The UP Oblation",
+    "Sunflowers",
+    "Ikot Jeepneys",
+    "Quezon Hall",
   ],
   2: [
-    "Lion",
-    "Tiger",
-    "Elephant",
-    "Giraffe",
-    "Zebra"
+    "“Ang clear ng sky”",
+    "“Ang ganda naman ng grass dito”",
+    "“Buti nalang maraming ulap”",
+    "“Shems ang init bakit tirik na tirik ang araw”",
   ],
   3: [
-    "Red",
-    "Blue",
-    "Green",
-    "Yellow",
-    "Purple"
+    "A student passing by held a research manual written in Comic Sans.",
+    "The placards used by the student protestors have Times New Roman as a font.",
+    "That your Apple watch notification used Sans-serif.",
+    "The food stalls you passed had signs written in Nautica Script.",
   ],
   4: [
-    "Soccer",
-    "Basketball",
-    "Tennis",
-    "Baseball",
-    "Swimming"
+    "“Kaya ko pa ‘to! ‘Di ako titigil sa sprint hangga’t di ko pa nakikita yung Acad Oval”",
+    "“Bakit ba ako nag-jogging?”",
+    "“AHHHHHHHHHHHHHHHHHH”",
+    "“Yaw q na kakain nalang ako”",
   ],
   5: [
-    "Pizza",
-    "Burger",
-    "Pasta",
-    "Sushi",
-    "Salad"
+    "Sabi mo: “Jusko less than 1km palang yung diretsong tinakbo ko?”",
+    "Naisip mo na: “Paano nga ba lumubog yung sunken garden?”",
+    "Napatanong ka: “Bakit sinabing oval ang acad oval kung ‘di naman siya perfect oval?”",
+    "Nakita mo ang SUB at narealize mo: “Para sa estudyante nga ba talaga ang SUB”",
   ],
   6: [
-    "JavaScript",
-    "Python",
-    "Java",
-    "C++",
-    "Ruby"
+    "Sili para sa iyong ramen.",
+    "Calamansi para sa iyong pancit.",
+    "Bawang para kasama ng panggisa.",
+    "Itlog para sa iyong hotdog.",
   ],
   7: [
-    "Guitar",
-    "Piano",
-    "Drums",
-    "Violin",
-    "Flute"
+    "Kwek-kwek",
+    "Siomai",
+    "Cheese sticks",
+    "Dynamite",
   ],
   8: [
-    "Spring",
-    "Summer",
-    "Autumn",
-    "Winter",
-    "Rainy Season"
+    "Tama",
+    "Mali",
+    "Maybe",
+    "Mmmmm",
   ],
   9: [
-    "Apple",
-    "Banana",
-    "Orange",
-    "Mango",
-    "Grapes"
+    "Gusto ko ng original flavor.",
+    "I feel spicy today.",
+    "What if maanghang na mej matamis?",
+    "Hmmm siguro calamansi nalang, the OG.",
   ],
   10: [
-    "Mount Everest",
-    "Mount Fuji",
-    "Mount Kilimanjaro",
-    "Mount Denali",
-    "Mount Elbrus"
+    "Combo 1 (with kwek-kwek)",
+    "Combo 2 (with siomai)",
+    "Combo 3 (with cheese stick)",
+    "Combo 4 (with dynamite)",
   ]
 };
 
 
-export const choiceLetters = ["A", "B", "C", "D", "E"];
+export const choiceLetters = ["A", "B", "C", "D"];
