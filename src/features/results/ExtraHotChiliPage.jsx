@@ -6,6 +6,7 @@ export default function ExtraHotChiliPage() {
       <Template
         flavorName="Extra Hot Chili"
         colorTheme="#a11b11"
+        choiceLetter="D"
         backgroundImage="/extra-hot-chili-package.png"
         descriptionText="Extra hot chili text goes here"
         descriptionImage="/red-peppers.png"

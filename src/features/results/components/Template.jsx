@@ -4,25 +4,15 @@ import { useNavigate } from "react-router-dom";
 
 export default function Template({
   flavorName,
+  choiceLetter,
   colorTheme,
   backgroundImage,
   // descriptionText,
   // descriptionImage,
-  otherFlavors,
+  // otherFlavors,
 }) {
   const navigate = useNavigate();
 
-  const handleOtherFlavorClick = (flavor) => {
-    if (flavor === "Original") {
-      navigate("/results/original");
-    } else if (flavor === "Kalamansi") {
-      navigate("/results/kalamansi");
-    } else if (flavor === "Extra Hot Chili") {
-      navigate("/results/extrahotchili");
-    } else {
-      navigate("/results/sweetandspicy");
-    }
-  };
   return (
     <main>
       <section>
@@ -78,12 +68,19 @@ export default function Template({
         </div>
         <div className="flex flex-col gap-2 items-center justify-center">
           <div className="text-gray-700 leading-relaxed space-y-4 text-lg max-w-2xl">
-            <p className="italic">
-              Actually… <span className="font-semibold">we don’t know.</span>
+            <p>
+              After calculating, analyzing, and interpreting your answers we
+              have come to the conclusion that you are {" "}
+              <span className="font-bold">{flavorName}</span> pancit canton!
             </p>
 
             <p>
-              If you thought each question carefully influenced your final
+              <span className="italic">Why?</span> Well, uhm. Actually…{" "}
+              <span className="font-semibold">we don’t know.</span>
+            </p>
+
+            <p>
+              If you thought each of your answers to each question carefully influenced your final
               flavor, well you are
               <span className="font-semibold"> wrong.</span> The only thing that
               truly mattered was your answer to the{" "}
@@ -123,6 +120,11 @@ export default function Template({
             </p>
 
             <p>
+              So we&apos;re guessing you picked {choiceLetter} in the last
+              question. That&apos;s why you&apos;re in this {flavorName} page.
+            </p>
+
+            <p>
               <span className="font-semibold">
                 {" "}
                 We made you feel like you had control
@@ -145,8 +147,9 @@ export default function Template({
             </p>
 
             <p>
-              However, you can still discover brand psychologies behind Pancit
-              Canton and their flavors in our discussion page.
+              But, since you&apos;re still here, let&apos;s discover brand
+              psychologies behind Pancit Canton, and connect them to other
+              lessons in our Arts class in our discussion page.
             </p>
           </div>
           <button
@@ -168,50 +171,10 @@ export default function Template({
             className={`border-2 border-outline-[${colorTheme}] rounded-full border-solid 
                 text-[${colorTheme}] py-2 px-5 tracking-wider hover:cursor-pointer hover:bg-[${colorTheme}]
                 hover:text-white`}
+            onClick={() => navigate()}
           >
             Proceed to Discussion
           </button>
-        </div>
-      </section>
-      <section className="flex flex-col items-center justify-center bg-gray-100 py-10 px-5 gap-15 min-h-screen">
-        <div className="flex flex-col items-center justify-center gap-2">
-          <h1 className="text-5xl">Check out the other flavors!</h1>
-          <div className="bg-black h-1 w-20"></div>
-        </div>
-        <div className="flex justify-center items-center gap-3">
-          {otherFlavors.map((flavor) => (
-            <div
-              key={flavor.name}
-              className="flex flex-col justify-center items-center h-auto bg-white
-                        rounded-2xl py-10 gap-2"
-            >
-              <img className="w-1/2 h-1/2" src={flavor.image} />
-              <h1 className={`text-3xl text-[${flavor.color}]`}>
-                {flavor.name}
-              </h1>
-              <button
-                style={{
-                  backgroundColor: flavor.color,
-                  color: "white",
-                  borderColor: flavor.color,
-                  borderWidth: "2px",
-                  borderStyle: "solid",
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = "white";
-                  e.currentTarget.style.color = flavor.color;
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = flavor.color;
-                  e.currentTarget.style.color = "white";
-                }}
-                className={`rounded-full py-2 px-5 hover:cursor-pointer`}
-                onClick={() => handleOtherFlavorClick(flavor.name)}
-              >
-                LEARN MORE
-              </button>
-            </div>
-          ))}
         </div>
       </section>
     </main>
@@ -221,6 +184,7 @@ export default function Template({
 Template.propTypes = {
   flavorName: PropTypes.string,
   colorTheme: PropTypes.string,
+  choiceLetter: PropTypes.string,
   backgroundImage: PropTypes.string,
   descriptionText: PropTypes.string,
   descriptionImage: PropTypes.string,

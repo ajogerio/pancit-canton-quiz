@@ -6,6 +6,7 @@ export default function OriginalPage() {
       <Template
         flavorName="Original"
         colorTheme="#e8be04"
+        choiceLetter="B"
         backgroundImage="/original-package.png"
         descriptionText="Original flavor description goes here"
         descriptionImage="/noodles.png"

@@ -5,6 +5,7 @@ export default function SweetAndSpicyPage() {
   return (
       <Template
         flavorName="Sweet and Spicy"
+        choiceLetter="C"
         colorTheme="#e4300b"
         backgroundImage="/sweet-and-spicy-package.png"
         descriptionText="Sweet and Spicy Description goes here"

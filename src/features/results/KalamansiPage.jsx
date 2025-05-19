@@ -5,6 +5,7 @@ export default function KalamansiPage() {
   return (
       <Template
         flavorName="Kalamansi"
+        choiceLetter="A"
         colorTheme="#1ea913"
         backgroundImage="/home-page-image-1.png"
         descriptionText="Kalamansi is a zesty and citrusy Filipino favorite that packs a flavorful punch. It's refreshing and sharp — just like you!"
