@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 export default function Template({
   flavorName,
@@ -25,13 +26,35 @@ export default function Template({
           <div className="absolute inset-0 bg-black/60"></div>
           <div className="flex flex-col justify-center items-center gap-5 relative z-10 text-white">
             <div className="flex flex-col justify-center items-center">
-              <p className="text-3xl sm:text-5xl">You are</p>
-              <h1 className="sm:text-8xl lg:text-9xl text-7xl text-center">
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
+                className="text-3xl sm:text-5xl"
+              >
+                You are
+              </motion.p>
+              <motion.h1
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2, duration: 0.5 }}
+                className="sm:text-8xl lg:text-9xl text-7xl text-center"
+              >
                 {flavorName}
-              </h1>
-              <p className="text-3xl sm:text-5xl">flavor</p>
+              </motion.h1>
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.2, duration: 0.5 }}
+                className="text-3xl sm:text-5xl"
+              >
+                flavor
+              </motion.p>
             </div>
-            <button
+            <motion.button
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1, duration: 0.5 }}
               style={{
                 color: colorTheme,
                 backgroundColor: "white",
@@ -44,14 +67,16 @@ export default function Template({
                 e.currentTarget.style.backgroundColor = "white";
                 e.currentTarget.style.color = colorTheme;
               }}
-              onClick={() => (descriptionRef.current?.scrollIntoView({
-                behavior: "smooth",
-              }))}
+              onClick={() =>
+                descriptionRef.current?.scrollIntoView({
+                  behavior: "smooth",
+                })
+              }
               className={`text-[${colorTheme}] rounded-full px-5 py-3 tracking-wider
               hover:cursor-pointer`}
             >
               SEE YOUR RESULTS 🍜
-            </button>
+            </motion.button>
           </div>
         </div>
       </section>
