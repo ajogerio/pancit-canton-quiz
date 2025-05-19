@@ -18,7 +18,7 @@ export default function ChoiceCard({
   return (
     <div className="flex flex-col rounded-lg">
       <div
-        className={`group relative flex flex-row items-center gap-[36px] 
+        className={`group relative flex flex-row items-center gap-5   sm:gap-[36px] 
         cursor-pointer px-5 py-2.5 font-extrabold rounded-t-sm
         ${
           selectedChoice !== currentLetter
@@ -32,7 +32,7 @@ export default function ChoiceCard({
         <div className="hidden group-hover:block absolute left-0 w-1.5 h-[90%] bg-[#1a8954] rounded-full"></div>
 
         <div
-          className={`rounded-full font-bold flex items-center justify-center w-12 h-12
+          className={`rounded-full aspect-square font-bold flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12
       ${
         selectedChoice !== currentLetter
           ? "bg-gray-100 text-grey-200 group-hover:bg-[#1a8954] group-hover:text-white"
@@ -41,7 +41,7 @@ export default function ChoiceCard({
         >
           {currentLetter}
         </div>
-        <div>{choice}</div>
+        <div className="sm:text-lg">{choice}</div>
       </div>
 
       {/* show the choice info if selected*/}
