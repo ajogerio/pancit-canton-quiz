@@ -158,6 +158,7 @@ export default function Template({
             className={`border-2 border-outline-[${colorTheme}] rounded-full border-solid 
                 text-[${colorTheme}] py-2 px-5 tracking-wider hover:cursor-pointer hover:bg-[${colorTheme}]
                 hover:text-white`}
+            onClick={() => navigate("/discussion")}
           >
             Why?
           </motion.button>
