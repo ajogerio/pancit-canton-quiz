@@ -6,8 +6,8 @@ export default function Template({
   flavorName,
   colorTheme,
   backgroundImage,
-  descriptionText,
-  descriptionImage,
+  // descriptionText,
+  // descriptionImage,
   otherFlavors,
 }) {
   const navigate = useNavigate();
@@ -54,25 +54,100 @@ export default function Template({
               className={`text-[${colorTheme}] rounded-full px-5 py-3 tracking-wider
               hover:cursor-pointer`}
             >
-              LEARN MORE
+              SEE YOUR RESULTS 🍜
             </button>
           </div>
         </div>
       </section>
       <section className="flex flex-col justify-center items-center gap-15 py-10 px-30 min-h-screen">
         <div className="flex flex-col justify-center items-center gap-2">
-          <h1 className={`text-[${colorTheme}] text-5xl`}>
-            What&apos;s up with {flavorName}?
+          <h1
+            style={{
+              color: colorTheme,
+            }}
+            className={`text-5xl`}
+          >
+            How did you get {flavorName}?
           </h1>
-          <div className={`bg-[${colorTheme}] h-1 w-20`}></div>
+          <div
+            style={{
+              backgroundColor: colorTheme,
+            }}
+            className={`h-1 w-20`}
+          ></div>
         </div>
         <div className="flex flex-col gap-2 items-center justify-center">
-          <div className="flex gap-2 items-center justify-center">
-            <p className="text-center text-gray-600">{descriptionText}</p>
-            <img
-              src={descriptionImage}
-              className="h-auto w-full object-cover"
-            />
+          <div className="text-gray-700 leading-relaxed space-y-4 text-lg max-w-2xl">
+            <p className="italic">
+              Actually… <span className="font-semibold">we don’t know.</span>
+            </p>
+
+            <p>
+              If you thought each question carefully influenced your final
+              flavor, well you are
+              <span className="font-semibold"> wrong.</span> The only thing that
+              truly mattered was your answer to the{" "}
+              <span className="underline">last question</span>.
+            </p>
+
+            <p>
+              <span className="font-semibold">
+                That’s right — just one choice decided everything
+              </span>
+              . If your answer to the last question was:
+              <br />
+              <span className="ml-4 block">
+                A ➡️{" "}
+                <span className="font-bold text-[#1ea913]">
+                  You will get the Kalamansi flavor.
+                </span>
+              </span>
+              <span className="ml-4 block">
+                B ➡️{" "}
+                <span className="font-bold text-[#e8be04]">
+                  You will get the Original flavor.
+                </span>
+              </span>
+              <span className="ml-4 block">
+                C ➡️{" "}
+                <span className="font-bold text-[#e4300b]">
+                  You will get the Sweet and Spicy flavor.
+                </span>
+              </span>
+              <span className="ml-4 block">
+                D ➡️{" "}
+                <span className="font-bold text-[#a11b11]">
+                  You will get the Extra Hot Chili flavor
+                </span>
+              </span>
+            </p>
+
+            <p>
+              <span className="font-semibold">
+                {" "}
+                We made you feel like you had control
+              </span>
+              , when in reality, the outcome was already decided.
+            </p>
+
+            <p>
+              <span className="font-semibold">
+                In short: you were manipulated.
+              </span>{" "}
+              Just like how many of our choices in life and the culture industry
+              are{" "}
+              <span className="underline">
+                shaped — or even controlled — by larger capitalist industries
+              </span>{" "}
+              as introduced to us by Adorno and friends in our Arts class.
+              Welcome to{" "}
+              <span className="font-bold italic">Pancit Capitalism™</span>
+            </p>
+
+            <p>
+              However, you can still discover brand psychologies behind Pancit
+              Canton and their flavors in our discussion page.
+            </p>
           </div>
           <button
             style={{
@@ -94,7 +169,7 @@ export default function Template({
                 text-[${colorTheme}] py-2 px-5 tracking-wider hover:cursor-pointer hover:bg-[${colorTheme}]
                 hover:text-white`}
           >
-            Read More
+            Proceed to Discussion
           </button>
         </div>
       </section>
