@@ -1,8 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
+import { choicesPerQuestion } from "../data/choices";
 
-export default function FinishButton({ enableFinishButton }) {
+export default function FinishButton({ enableFinishButton, quizForm }) {
   const navigate = useNavigate();
   return (
     <button
@@ -13,7 +14,7 @@ export default function FinishButton({ enableFinishButton }) {
           : "bg-gray-100 text-gray-400 hover:cursor-not-allowed"
       }`}
       disabled={!enableFinishButton}
-      onClick={() => {navigate("/calculating")}}
+      onClick={() => {navigate("/calculating", { state: {lastAnswer: quizForm[10]}})}}
     >
       <p>Finish</p>
     </button>
@@ -22,4 +23,5 @@ export default function FinishButton({ enableFinishButton }) {
 
 FinishButton.propTypes = {
   enableFinishButton: PropTypes.bool,
+  quizForm: PropTypes.objectOf(PropTypes.oneOf(choicesPerQuestion)).isRequired,
 };

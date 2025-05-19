@@ -1,47 +1,7 @@
-import React, { useEffect, useState, useReducer } from "react";
+import React, { useEffect, useState } from "react";
 import { choicesPerQuestion } from "../data/choices";
 import PropTypes from "prop-types";
 import ChoiceCard from "./ChoiceCard";
-
-const initialQuizFormState = {
-  quizForm: {
-    1: null,
-    2: null,
-    3: null,
-    4: null,
-    5: null,
-    6: null,
-    7: null,
-    8: null,
-    9: null,
-    10: null,
-  },
-  selectedChoice: null,
-};
-
-function quizReducer(state, action) {
-  switch (action.type) {
-    case "SELECT_CHOICE":
-      return {
-        ...state,
-        quizForm: {
-          ...state.quizForm,
-          [action.payload.questionNumber]: action.payload.selectedLetter,
-        },
-
-        selectedChoice: action.payload.selectedLetter,
-      };
-
-    case "LOAD_SELECTED_CHOICE":
-      return {
-        ...state,
-        selectedChoice: action.payload,
-      };
-
-    default:
-      return state;
-  }
-}
 
 export default function Choices({
   questionsTotal,
@@ -49,11 +9,10 @@ export default function Choices({
   setEnableNextButton,
   setEnableFinishButton,
   setProgress,
+  quizForm,
+  selectedChoice,
+  dispatch,
 }) {
-  // this will hold all the previous choice data so it persists
-  const [state, dispatch] = useReducer(quizReducer, initialQuizFormState);
-  const { quizForm, selectedChoice } = state;
-
   // show the info of the selected choice
   // const [showChoiceInfo, setShowChoiceInfo] = useState(false);
 
@@ -95,6 +54,7 @@ export default function Choices({
     setEnableNextButton,
     setEnableFinishButton,
     questionsTotal,
+    dispatch,
   ]);
 
   useEffect(() => {
@@ -126,7 +86,6 @@ export default function Choices({
                   Math.round((questionNumber / questionsTotal) * 100)
                 );
               }
-
             }}
           />
         ))}
@@ -142,4 +101,7 @@ Choices.propTypes = {
   setEnableNextButton: PropTypes.func,
   setEnableFinishButton: PropTypes.func,
   setProgress: PropTypes.func,
+  quizForm: PropTypes.objectOf(PropTypes.oneOf(choicesPerQuestion)).isRequired,
+  selectedChoice: PropTypes.oneOf(choicesPerQuestion),
+  dispatch: PropTypes.func.isRequired,
 };

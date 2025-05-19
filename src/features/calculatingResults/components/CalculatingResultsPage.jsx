@@ -1,16 +1,34 @@
 import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 export default function CalculatingResultsPage() {
   const navigate = useNavigate();
+  const location = useLocation();
+  const lastAnswer = location.state.lastAnswer;
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      navigate("/results");
+      switch (lastAnswer) {
+        case "A":
+          navigate("/results/kalamansi");
+          break;
+        case "B":
+          navigate("/results/original");
+          break;
+        case "C":
+          navigate("/results/sweetandspicy");
+          break;
+        case "D":
+          navigate("/results/extrahotchili");
+          break;
+        default:
+          navigate("/results/kalamansi");
+          break;
+      }
     }, 10000);
 
     return () => clearTimeout(timer);
-  }, [navigate]);
+  }, [navigate, lastAnswer]);
 
   return (
     <main className="flex flex-col items-center justify-center min-h-screen">
