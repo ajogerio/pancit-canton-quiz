@@ -1,6 +1,6 @@
-import React from 'react';
-import FlavorHeader from './components/FlavorHeader';
-import FlavorDescription from './components/FlavorDescription';
+import React from "react";
+import FlavorHeader from "./components/FlavorHeader";
+import FlavorDescription from "./components/FlavorDescription";
 
 export default function DiscussionPage() {
   return (
@@ -14,9 +14,9 @@ export default function DiscussionPage() {
           <div className="absolute inset-0 bg-black/60"></div>
           <div className="flex flex-col justify-center items-center gap-5 relative z-10 text-white">
             <div className="flex flex-col justify-center items-center">
-              <p className="text-5xl">What the</p>
-              <h1 className="text-9xl">Pancit???</h1>
-              <p className="text-3xl">
+              <p className="sm:text-5xl text-3xl text-center">What the</p>
+              <h1 className="sm:text-9xl text-8xl text-center">Pancit???</h1>
+              <p className="sm:text-3xl px-10 text-xl text-center">
                 There’s something about Pancit Canton. The way we always go back
                 to it…
               </p>
@@ -24,10 +24,10 @@ export default function DiscussionPage() {
           </div>
         </div>
       </section>
-      <section className="flex flex-col justify-center items-center gap-15 pt-25 pb-10 px-30">
+      <section className="flex flex-col justify-center items-center gap-15 pt-25 pb-10 px-10 sm:px-30">
         <div className="flex flex-col justify-center items-center gap-2">
           <h1 className="text-5xl text-center">
-            It’s THE Filipino comfort food.
+            It’s THE Filipino comfort food
           </h1>
           <span className="text-center">
             This is exactly what their branding is all about—the feeling of
@@ -40,10 +40,10 @@ export default function DiscussionPage() {
       </section>
       <section className="flex flex-col justify-center items-center gap-15 py-10 px-30">
         <div className="flex flex-col justify-center items-center gap-2">
-          <h1 className={`text-5xl`}>CONSISTENCY.</h1>
+          <h1 className={`text-5xl text-center`}>CONSISTENCY</h1>
           <span className="text-center py-2">
             Yes, visuals may get updated according to current design trends, but
-            they keep everything else{' '}
+            they keep everything else{" "}
             <span className="font-bold">familiar</span>
             —from the iconic name to the recognizable colors, and most
             importantly, the taste. It’s the same taste, anytime and anywhere.
@@ -58,11 +58,11 @@ export default function DiscussionPage() {
         </div>
       </section>
 
-      <section className="flex flex-col justify-center items-center gap-15 py-10 px-30">
+      <section className="flex flex-col justify-center items-center gap-15 py-10 px-10 sm:px-30">
         <div className="flex flex-col justify-center items-center gap-2">
-          <h1 className={`text-5xl`}>EMOTIONAL APPEAL.</h1>
+          <h1 className={`text-5xl text-center`}>EMOTIONAL APPEAL</h1>
           <span className="text-center py-2">
-            From this sense of familiarity comes a feeling of{' '}
+            From this sense of familiarity comes a feeling of{" "}
             <span className="font-bold">nostalgia.</span>
           </span>
           <span className="text-center py-2">
@@ -71,7 +71,7 @@ export default function DiscussionPage() {
           </span>
           <span className="text-center py-2">
             They make us picture fond memories of eating merienda happily with
-            our family—reminding us of our{' '}
+            our family—reminding us of our{" "}
             <span className="font-bold">home</span> no matter where we are.
           </span>
         </div>
@@ -84,9 +84,11 @@ export default function DiscussionPage() {
           backgroundImage="/home-page-image-1.png"
         />
         <FlavorDescription>
-          <span className="text-center text-5xl py-2 text-[#1ea913]">
-            🍋‍🟩🍋‍🟩🍋‍🟩 The Sharp Thinker 🍋‍🟩🍋‍🟩🍋‍🟩
-          </span>
+          <p className="flex flex-col items-center justify-center md:flex-row text-center text-5xl py-2 text-[#1ea913]">
+            <span className="px-2"> 🍋‍🟩🍋‍🟩🍋‍🟩</span>
+            <span className="px-2">The Sharp Thinker</span>
+            <span className="px-2"> 🍋‍🟩🍋‍🟩🍋‍🟩</span>
+          </p>
           <span className="text-center py-2">
             The dominant color is green—but a lighter, more citrus-associated
             green. This particular shade emphasizes freshness, acidity, and
@@ -114,9 +116,11 @@ export default function DiscussionPage() {
           backgroundImage="/original-package.png"
         />
         <FlavorDescription>
-          <span className="text-center text-5xl py-2 text-[#e8be04]">
-            🍜🍜🍜 The Everyday Icon 🍜🍜🍜
-          </span>
+          <p className="flex flex-col items-center justify-center md:flex-row text-center text-5xl py-2 text-[#e8be04]">
+            <span className="px-2"> 🍜🍜🍜</span>
+            <span className="px-2">The Everyday Icon</span>
+            <span className="px-2"> 🍜🍜🍜</span>
+          </p>
           <span className="text-center py-2">
             The dominant color is yellow—associated with joy, warmth, and
             accessibility. Psychologically, it triggers hunger, optimism, and
@@ -145,9 +149,11 @@ export default function DiscussionPage() {
           backgroundImage="/sweet-and-spicy-package.png"
         />
         <FlavorDescription>
-          <span className="text-center text-5xl py-2 text-[#e4300b]">
-            🔥🍬🔥 The Harmonizer 🔥🍬🔥
-          </span>
+          <p className="flex flex-col items-center justify-center md:flex-row text-center text-5xl py-2 text-[#e4300b]">
+            <span className="w-full">🔥🍬🔥</span>
+            <span>The Harmonizer</span>
+            <span className="w-full">🔥🍬🔥</span>
+          </p>
           <span className="text-center py-2">
             The dominant color is orange—combining the warmth and comfort of
             sweetness (yellow) with the energy and intensity of spice (red). In
@@ -178,9 +184,11 @@ export default function DiscussionPage() {
           backgroundImage="/extra-hot-chili-package.png"
         />
         <FlavorDescription>
-          <span className="text-center text-5xl py-2 text-[#a11b11]">
-            🌶️🌶️🌶️ The Bold Firestarter 🌶️🌶️🌶️
-          </span>
+          <p className="flex flex-col items-center justify-center md:flex-row text-center text-5xl py-2 text-[#a11b11]">
+            <span className="px-2"> 🌶️🌶️🌶️</span>
+            <span className="px-2">The Bold Firestarter</span>
+            <span className="px-2"> 🌶️🌶️🌶️</span>
+          </p>
           <span className="text-center py-2">
             The dominant color is red—globally associated with intensity, danger
             and passion. In color psychology, it stimulates faster
