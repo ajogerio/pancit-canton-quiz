@@ -27,7 +27,7 @@ export const choicesPerQuestion = {
     "Sabi mo: “Jusko less than 1km palang yung diretsong tinakbo ko?”",
     "Naisip mo na: “Paano nga ba lumubog yung sunken garden?”",
     "Napatanong ka: “Bakit sinabing oval ang acad oval kung ‘di naman siya perfect oval?”",
-    "Nakita mo ang SUB at narealize mo: “Para sa estudyante nga ba talaga ang SUB”",
+    "Napansin mo ang mga naglalaro ng football sa Sunken Garden, at parang gusto mong sumali.",
   ],
   6: [
     "Sili para sa iyong ramen.",

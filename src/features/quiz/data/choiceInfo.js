@@ -29,7 +29,7 @@ export const choiceInfo = {
     A: "Anumang distance ‘yan, diretso lang. Walang biglang liko. Predictable. Walang gulo, hindi pabago-bago. Familiar ang structure, nothing unexpected. Classic!",
     B: "There’s something interesting about the depth of the Sunken Garden eh. Coming from a layer that’s familiar, calming… you sink deeper to a layer of mystery, at ‘yun ang nagbibigay sa’yo ng excitement. From something maybe sweet to maybe something spicy kaya ito? ;)",
     C: "Weird nga naman ng oval na medyo may pa-jagged jagged lines. Parang may tension. Siguro para may thrill… something intense… something… hot and spicy?",
-    D: "...",
+    D: "Football, huh… baka gusto mo ng sumisipa? Maybe something with a kick… ;)",
   },
   6: {
     A: "Ahh, spicy pala ang type mo ah!",
