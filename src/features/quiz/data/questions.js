@@ -1,12 +1,12 @@
 export const  questions = {
-  1: "Which city would you love to visit the most?",
-  2: "Which animal do you find the most majestic?",
-  3: "Pick the color that best matches your vibe:",
-  4: "What's your favorite sport to watch or play?",
-  5: "Which food are you craving right now?",
-  6: "Which programming language sounds the coolest to you?",
-  7: "Which musical instrument would you want to learn?",
-  8: "Which season of the year do you enjoy most?",
-  9: "Pick your go-to fruit snack:",
-  10: "Which mountain would you want to climb (or at least admire)?"
+  1: "Pumunta ka ng UP para mag-jogging. Dumating ka sa start location, UP’s University Avenue, una mong nakita ang:",
+  2: "You decided to jog around the University’s Academic Oval. The first thing that came to your mind was:",
+  3: "You sprinted to test your limit, and reached AS steps in 10 seconds. You were panting so hard you realized:",
+  4: "You said to yourself:",
+  5: "Pagdating mo ng Benitez Hall...",
+  6: "Sa sobrang hingal mo, huminto ka sa harap ng Sunken Grandstand kasi may mga nagbebenta ng gulay, at balak mo bumili ng:",
+  7: "Sa pagtuloy mo ng jogging, nauhaw ka kaya bumili ka ng tubig sa tindahang malapit sa Melchor Hall at napansin mong nagbebenta rin sila ng:",
+  8: "Sabi mo “Mamaya nalang ako bibili, reward ko yon sa sarili ko.” Tamang mindset ba yon?",
+  9: "Pagdating mo sa KAL, nagsimula ka na mag-isip kung anong flavor ng pancit canton ang oorderin mo:",
+  10: "Nakarating ka na sa dulo ng jog mo, nagutom ka na kaya naisipan mo na bumili ng pancit canton combo meal sa kiosk. Anong oorderin mo?"
 };
