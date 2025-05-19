@@ -1,7 +1,7 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, useInView } from "motion/react";
 
 export default function Template({
   flavorName,
@@ -13,11 +13,21 @@ export default function Template({
   // otherFlavors,
 }) {
   const navigate = useNavigate();
-  const descriptionRef = useRef(null);
+  const descriptionSectionRef = useRef(null);
+  const descriptionHeaderRef = useRef(null);
+  const damnContentRef = useRef(null);
+
+  const isHeaderInView = useInView(descriptionHeaderRef, { once: true });
 
   const [whyButtonClicked, setWhyButtonClicked] = useState(false);
   const [whatButtonClicked, setWhatButtonClicked] = useState(false);
   const [damnButtonClicked, setDamnButtonClicked] = useState(false);
+
+  useEffect(() => {
+    if (damnButtonClicked && damnContentRef.current) {
+      damnContentRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [damnButtonClicked]);
   return (
     <main>
       <section>
@@ -71,7 +81,7 @@ export default function Template({
                 e.currentTarget.style.color = colorTheme;
               }}
               onClick={() =>
-                descriptionRef.current?.scrollIntoView({
+                descriptionSectionRef.current?.scrollIntoView({
                   behavior: "smooth",
                 })
               }
@@ -85,33 +95,50 @@ export default function Template({
       </section>
       <section
         className="flex flex-col justify-start items-center gap-15 py-10 sm:px-30 px-10 min-h-screen"
-        ref={descriptionRef}
+        ref={descriptionSectionRef}
       >
         <div className="flex flex-col justify-center items-center gap-2">
-          <h1
+          <motion.h1
+            ref={descriptionHeaderRef}
+            initial={{ opacity: 0, y: 50 }}
+            animate={isHeaderInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ delay: 0.2, duration: 0.5 }}
             style={{
               color: colorTheme,
             }}
             className={`text-5xl text-center`}
           >
             How did you get {flavorName}?
-          </h1>
-          <div
+          </motion.h1>
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            viewport={{ once: true }}
             style={{
               backgroundColor: colorTheme,
             }}
             className={`h-1 w-20`}
-          ></div>
+          ></motion.div>
         </div>
 
         <div className="flex flex-col gap-2 items-center justify-center text-gray-700 leading-relaxed space-y-4 text-lg max-w-2xl text-justify">
-          <p>
+          <motion.p
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
             After calculating, analyzing, and interpreting your answers we have
             come to the conclusion that you are{" "}
             <span className="font-bold">{flavorName}</span> pancit canton!
-          </p>
+          </motion.p>
 
-          <button
+          <motion.button
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 3 }}
+            viewport={{ once: true }}
             style={{
               color: colorTheme,
               borderColor: colorTheme,
@@ -133,16 +160,25 @@ export default function Template({
                 hover:text-white`}
           >
             Why?
-          </button>
+          </motion.button>
 
           {whyButtonClicked && (
             <>
-              <p>
+              <motion.p
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
                 <span className="italic">Why?</span> Well, uhm. Actually…{" "}
                 <span className="font-semibold">we don’t know.</span>
-              </p>
+              </motion.p>
 
-              <button
+              <motion.button
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 3 }}
+                viewport={{ once: true }}
                 style={{
                   color: colorTheme,
                   borderColor: colorTheme,
@@ -164,20 +200,29 @@ export default function Template({
                 hover:text-white`}
               >
                 What?
-              </button>
+              </motion.button>
             </>
           )}
           {whatButtonClicked && (
             <>
-              <p>
+              <motion.p
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
                 Yeah. If you thought each of your answers to each question
                 carefully influenced your final flavor, well you are
                 <span className="font-semibold"> wrong.</span> The only thing
                 that truly mattered was your answer to the{" "}
                 <span className="underline">last question</span>.
-              </p>
+              </motion.p>
 
-              <button
+              <motion.button
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 3 }}
+                viewport={{ once: true }}
                 style={{
                   color: colorTheme,
                   borderColor: colorTheme,
@@ -193,82 +238,95 @@ export default function Template({
                   e.currentTarget.style.backgroundColor = "white";
                   e.currentTarget.style.color = colorTheme;
                 }}
-                onClick={() => setDamnButtonClicked(!damnButtonClicked)}
+                onClick={() => {
+                  setDamnButtonClicked(!damnButtonClicked);
+                }}
                 className={`border-2 border-outline-[${colorTheme}] rounded-full border-solid 
                 text-[${colorTheme}] py-2 px-5 tracking-wider hover:cursor-pointer hover:bg-[${colorTheme}]
                 hover:text-white self-center`}
               >
                 Damn.
-              </button>
+              </motion.button>
             </>
           )}
 
           {damnButtonClicked && (
             <>
-              <p>
-                <span className="font-semibold">
-                  That’s right — just one choice decided everything
-                </span>
-                . If your answer to the last question was:
-                <br />
-                <span className="ml-4 block">
-                  A ➡️{" "}
-                  <span className="font-bold text-[#1ea913]">
-                    You will get the Kalamansi flavor.
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="flex flex-col align-center"
+                ref={damnContentRef}
+              >
+                <motion.p>
+                  <span className="font-semibold">
+                    That’s right — just one choice decided everything
                   </span>
-                </span>
-                <span className="ml-4 block">
-                  B ➡️{" "}
-                  <span className="font-bold text-[#e8be04]">
-                    You will get the Original flavor.
+                  . If your answer to the last question was:
+                  <br />
+                  <span className="ml-4 block">
+                    A ➡️{" "}
+                    <span className="font-bold text-[#1ea913]">
+                      You will get the Kalamansi flavor.
+                    </span>
                   </span>
-                </span>
-                <span className="ml-4 block">
-                  C ➡️{" "}
-                  <span className="font-bold text-[#e4300b]">
-                    You will get the Sweet and Spicy flavor.
+                  <span className="ml-4 block">
+                    B ➡️{" "}
+                    <span className="font-bold text-[#e8be04]">
+                      You will get the Original flavor.
+                    </span>
                   </span>
-                </span>
-                <span className="ml-4 block">
-                  D ➡️{" "}
-                  <span className="font-bold text-[#a11b11]">
-                    You will get the Extra Hot Chili flavor
+                  <span className="ml-4 block">
+                    C ➡️{" "}
+                    <span className="font-bold text-[#e4300b]">
+                      You will get the Sweet and Spicy flavor.
+                    </span>
                   </span>
-                </span>
-              </p>
+                  <span className="ml-4 block">
+                    D ➡️{" "}
+                    <span className="font-bold text-[#a11b11]">
+                      You will get the Extra Hot Chili flavor
+                    </span>
+                  </span>
+                </motion.p>
 
-              <p>
-                So we&apos;re guessing you picked {choiceLetter} in the last
-                question. That&apos;s why you&apos;re in this {flavorName} page.
-              </p>
+                <p>
+                  So we&apos;re guessing you picked {choiceLetter} in the last
+                  question. That&apos;s why you&apos;re in this {flavorName}{" "}
+                  page.
+                </p>
 
-              <p>
-                <span className="font-semibold">
-                  {" "}
-                  We made you feel like you had control
-                </span>
-                , when in reality, the outcome was already decided.
-              </p>
+                <p>
+                  <span className="font-semibold">
+                    {" "}
+                    We made you feel like you had control
+                  </span>
+                  , when in reality, the outcome was already decided.
+                </p>
 
-              <p>
-                <span className="font-semibold">
-                  In short: you were manipulated.
-                </span>{" "}
-                Just like how many of our choices in life and the culture
-                industry are{" "}
-                <span className="underline">
-                  shaped — or even controlled — by larger capitalist industries
-                </span>{" "}
-                as introduced to us by Adorno and friends in our Arts class.
-                Welcome to{" "}
-                <span className="font-bold italic">Pancit Capitalism™</span>
-              </p>
+                <p>
+                  <span className="font-semibold">
+                    In short: you were manipulated.
+                  </span>{" "}
+                  Just like how many of our choices in life and the culture
+                  industry are{" "}
+                  <span className="underline">
+                    shaped — or even controlled — by larger capitalist
+                    industries
+                  </span>{" "}
+                  as introduced to us by Adorno and friends in our Arts class.
+                  Welcome to{" "}
+                  <span className="font-bold italic">Pancit Capitalism™</span>
+                </p>
 
-              <p>
-                But, since you&apos;re still here, let&apos;s discover brand
-                psychologies behind Pancit Canton, and connect them to other
-                lessons in our Arts class in our discussion page.
-              </p>
+                <p>
+                  But, since you&apos;re still here, let&apos;s discover brand
+                  psychologies behind Pancit Canton, and connect them to other
+                  lessons in our Arts class in our discussion page.
+                </p>
+              </motion.div>
               <button
                 style={{
                   color: colorTheme,
