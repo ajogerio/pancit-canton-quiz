@@ -9,7 +9,7 @@ export default function FlavorHeader({
   return (
     <>
       <div
-        className={`relative flex flex-col justify-center items-center min-h-84 
+        className={`relative flex flex-col justify-center items-center min-h-124 
         w-full bg-center bg-repeat`}
         style={{ backgroundImage: `url(${backgroundImage})` }}
       >

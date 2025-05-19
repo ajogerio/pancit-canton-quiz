@@ -79,6 +79,100 @@ export default function DiscussionPage() {
 
       <section>
         <FlavorHeader
+          flavorName="Kalamansi"
+          colorTheme="#1ea913"
+          backgroundImage="/home-page-image-1.png"
+        />
+        <FlavorDescription>
+          <span className="text-center text-5xl py-2 text-[#1ea913]">
+            🍋‍🟩🍋‍🟩🍋‍🟩 The Sharp Thinker 🍋‍🟩🍋‍🟩🍋‍🟩
+          </span>
+          <span className="text-center py-2">
+            The dominant color is green—but a lighter, more citrus-associated
+            green. This particular shade emphasizes freshness, acidity, and
+            natural zest, tied closely to the sensory experience of biting into
+            a sour calamansi. In color psychology, green is associated with
+            nature, health, and vitality. It evokes feelings of balance and
+            harmony, a stark contrast to the boldness of other flavors.
+          </span>
+          <span className="text-center py-2">
+            The composition of the Kalamansi flavor packaging is clean, focused,
+            and intentionally minimalist. At the visual center of the dish are
+            two vibrant calamansi slices, acting almost like a brand emblem
+            within the food—anchoring the viewer’s gaze and highlighting the
+            citrus as the core identity. The arrangement of the toppings is
+            balanced and orderly, with the curled shrimp and vegetables forming
+            soft circular rhythms that reinforce harmony and freshness.
+          </span>
+        </FlavorDescription>
+      </section>
+
+      <section>
+        <FlavorHeader
+          flavorName="Original"
+          colorTheme="#e8be04"
+          backgroundImage="/original-package.png"
+        />
+        <FlavorDescription>
+          <span className="text-center text-5xl py-2 text-[#e8be04]">
+            🍜🍜🍜 The Everyday Icon 🍜🍜🍜
+          </span>
+          <span className="text-center py-2">
+            The dominant color is yellow—associated with joy, warmth, and
+            accessibility. Psychologically, it triggers hunger, optimism, and
+            speed, but it can also signify comfort—the kind you trust, return
+            to, and maybe even grew up with. The Original flavor is familiar,
+            safe, and an all-time favorite. It appeals to nostalgia and
+            tradition in the Filipino consumer psyche, using yellow as a cue for
+            reliability and sunny emotional tone.
+          </span>
+          <span className="text-center py-2">
+            The circular plate is centrally aligned, with even distribution of
+            various garnishes that make up a balanced whole. No one element
+            dominates—just like the flavor itself: balanced and understated. The
+            toppings (boiled egg slices, shrimps, vegetable flakes) are not
+            stylized or exaggerated—they feel like something you could actually
+            recreate at home. It does not try to be extra, but real—making it a
+            timeless classic.
+          </span>
+        </FlavorDescription>
+      </section>
+
+      <section>
+        <FlavorHeader
+          flavorName="Sweet and Spicy"
+          colorTheme="#e4300b"
+          backgroundImage="/sweet-and-spicy-package.png"
+        />
+        <FlavorDescription>
+          <span className="text-center text-5xl py-2 text-[#e4300b]">
+            🔥🍬🔥 The Harmonizer 🔥🍬🔥
+          </span>
+          <span className="text-center py-2">
+            The dominant color is orange—combining the warmth and comfort of
+            sweetness (yellow) with the energy and intensity of spice (red). In
+            branding psychology, orange evokes enthusiasm, friendliness, and
+            emotional warmth. It’s vibrant but non-threatening—perfect for a
+            flavor that promises dual sensations. It feels social and
+            expressive—not as aggressive as red, not as soothing as green—orange
+            hits the sweet spot. You don’t just eat this flavor; you feel it’s
+            approachable with a kick.
+          </span>
+          <span className="text-center py-2">
+            The playful swirl of red pepper at the center mimics a spiral—placed
+            almost like a calligraphic stroke or brush mark in Asian art. This
+            visual "swoop" adds motion and flair, giving the dish personality.
+            The noodle strands twist and curl in energetic swirls, while the
+            toppings are scattered with intentional asymmetry. The mix of
+            scattered red chili slices and green vegetable flakes mimics a
+            dynamism within order, echoing the flavor's duality—sweetness and
+            spice colliding in harmony.
+          </span>
+        </FlavorDescription>
+      </section>
+
+      <section>
+        <FlavorHeader
           flavorName="Extra Hot Chili"
           colorTheme="#a11b11"
           backgroundImage="/extra-hot-chili-package.png"
