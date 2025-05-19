@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
 
@@ -12,6 +12,7 @@ export default function Template({
   // otherFlavors,
 }) {
   const navigate = useNavigate();
+  const descriptionRef = useRef(null);
 
   return (
     <main>
@@ -24,9 +25,11 @@ export default function Template({
           <div className="absolute inset-0 bg-black/60"></div>
           <div className="flex flex-col justify-center items-center gap-5 relative z-10 text-white">
             <div className="flex flex-col justify-center items-center">
-              <p className="text-5xl">You are</p>
-              <h1 className="text-9xl">{flavorName}</h1>
-              <p className="text-5xl">flavor</p>
+              <p className="text-3xl sm:text-5xl">You are</p>
+              <h1 className="sm:text-8xl lg:text-9xl text-7xl text-center">
+                {flavorName}
+              </h1>
+              <p className="text-3xl sm:text-5xl">flavor</p>
             </div>
             <button
               style={{
@@ -41,6 +44,9 @@ export default function Template({
                 e.currentTarget.style.backgroundColor = "white";
                 e.currentTarget.style.color = colorTheme;
               }}
+              onClick={() => (descriptionRef.current?.scrollIntoView({
+                behavior: "smooth",
+              }))}
               className={`text-[${colorTheme}] rounded-full px-5 py-3 tracking-wider
               hover:cursor-pointer`}
             >
@@ -49,13 +55,16 @@ export default function Template({
           </div>
         </div>
       </section>
-      <section className="flex flex-col justify-center items-center gap-15 py-10 px-30 min-h-screen">
+      <section
+        className="flex flex-col justify-center items-center gap-15 py-10 sm:px-30 px-10 min-h-screen"
+        ref={descriptionRef}
+      >
         <div className="flex flex-col justify-center items-center gap-2">
           <h1
             style={{
               color: colorTheme,
             }}
-            className={`text-5xl`}
+            className={`text-5xl text-center`}
           >
             How did you get {flavorName}?
           </h1>
@@ -67,10 +76,10 @@ export default function Template({
           ></div>
         </div>
         <div className="flex flex-col gap-2 items-center justify-center">
-          <div className="text-gray-700 leading-relaxed space-y-4 text-lg max-w-2xl">
+          <div className="text-gray-700 leading-relaxed space-y-4 text-lg max-w-2xl text-justify">
             <p>
               After calculating, analyzing, and interpreting your answers we
-              have come to the conclusion that you are {" "}
+              have come to the conclusion that you are{" "}
               <span className="font-bold">{flavorName}</span> pancit canton!
             </p>
 
@@ -80,8 +89,8 @@ export default function Template({
             </p>
 
             <p>
-              If you thought each of your answers to each question carefully influenced your final
-              flavor, well you are
+              If you thought each of your answers to each question carefully
+              influenced your final flavor, well you are
               <span className="font-semibold"> wrong.</span> The only thing that
               truly mattered was your answer to the{" "}
               <span className="underline">last question</span>.
