@@ -1,4 +1,6 @@
 import React from 'react';
+import FlavorHeader from './components/FlavorHeader';
+import FlavorDescription from './components/FlavorDescription';
 
 export default function DiscussionPage() {
   return (
@@ -73,6 +75,35 @@ export default function DiscussionPage() {
             <span className="font-bold">home</span> no matter where we are.
           </span>
         </div>
+      </section>
+
+      <section>
+        <FlavorHeader
+          flavorName="Extra Hot Chili"
+          colorTheme="#a11b11"
+          backgroundImage="/extra-hot-chili-package.png"
+        />
+        <FlavorDescription>
+          <span className="text-center text-5xl py-2 text-[#a11b11]">
+            🌶️🌶️🌶️ The Bold Firestarter 🌶️🌶️🌶️
+          </span>
+          <span className="text-center py-2">
+            The dominant color is red—globally associated with intensity, danger
+            and passion. In color psychology, it stimulates faster
+            decision-making, increases heart rate, and is linked with bold
+            (spicy, even) experiences. The aggressive red background of the
+            packaging signals the consumer to prepare for a hot and thrilling
+            sensory experience!
+          </span>
+          <span className="text-center py-2">
+            The noodles are displayed in a circular white plate, isolating the
+            product and elevating it as the main focal point of the radial
+            balance exhibited in the packaging. Emanating from the plate, the
+            radiating noodles and garnish imply explosion and movement, visually
+            mirroring the burst of heat one expects from spicy food. The
+            composition creates a dynamic energy, drawing the eye in.
+          </span>
+        </FlavorDescription>
       </section>
     </main>
   );
