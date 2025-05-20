@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import FlavorHeader from "./components/FlavorHeader";
 import FlavorDescription from "./components/FlavorDescription";
 
 export default function DiscussionPage() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <main>
       <section>
